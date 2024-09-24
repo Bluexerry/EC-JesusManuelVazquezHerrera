@@ -4,4 +4,4 @@ Este proyecto muestra cómo cambiar el color de fondo de la página al hacer cli
 
 ## Demostración
 
-![Cambio de Color con Botón](EC-JesusManuelVazquezHerrera/T1/SPRINT 1/Ejercicio 1/Ejercicio1.gif)
+![Cambio de Color con Botón](Ejercicio1.gif)
