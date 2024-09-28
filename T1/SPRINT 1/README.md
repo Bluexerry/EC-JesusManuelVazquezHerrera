@@ -7,10 +7,10 @@ El ejercicio consiste en crear una página web que contenga un botón etiquetado
 
 ## Diseño
 
-**HTML (Ejercicio1.html):**  
+**HTML (ejercicio1.html):**  
 El archivo HTML contiene la estructura básica de la página web. Dentro del cuerpo de la página (`<body>`), se define un botón con el texto "Cambiar color". Se enlaza un archivo externo JavaScript (`Ejercicio1.js`) que contiene la lógica para cambiar el color de fondo.
 
-**JavaScript (Ejercicio1.js):**  
+**JavaScript (ejercicio1.js):**  
 
 - Se selecciona el botón utilizando su `id` (`colorButton`).
 - Se define una función `generateRandomColor()` que genera un color RGB aleatorio, utilizando `Math.random()` para generar valores entre 0 y 255 para los componentes de color rojo (R), verde (G) y azul (B).
@@ -22,10 +22,10 @@ El archivo HTML contiene la estructura básica de la página web. Dentro del cue
 - Generación de colores aleatorios con JavaScript: Se investigaron ejemplos sobre cómo generar valores RGB aleatorios utilizando `Math.random()`.
 - Uso de `addEventListener` para agregar interactividad a elementos HTML en eventos de clic.
 
-Si fue realizada con IA, las preguntas concretas fueron:
+Todo el contenido del HTML y JS ha sido dado por ayuda de ChatGPT:
 
-- ¿Cómo puedo generar un color RGB aleatorio en JavaScript?
-- ¿Cómo puedo cambiar el color de fondo de una página web mediante JavaScript?
+- ¿Cómo puedo generar un color RGB aleatorio en JavaScript base en un boton en HTML?
+- ¿Cómo asigno el boton a Math.Random?
 - ¿Cómo se puede añadir un evento de clic a un botón en JavaScript?
 
 ## Prueba
@@ -48,10 +48,10 @@ El ejercicio consiste en crear una página web que permita calcular el área de 
 
 ## Diseño
 
-**HTML (Ejercicio2.html):**  
-La página tiene dos campos de entrada de tipo `number` para el ancho (`width`) y el alto (`height`), ambos con un valor mínimo de 0. También incluye un botón para realizar el cálculo y un párrafo donde se mostrará el resultado del área. La interfaz está estilizada con CSS para mejorar la presentación, usando un contenedor centralizado con bordes redondeados y sombras suaves.
+**HTML (ejercicio2.html):**  
+La página tiene dos campos de entrada de tipo `number` para el ancho (`width`) y el alto (`height`), ambos con un valor mínimo de 0. También incluye un botón para realizar el cálculo y un párrafo donde se mostrará el resultado del área.
 
-**JavaScript (Ejercicio2.js):**  
+**JavaScript (ejercicio2.js):**  
 
 - Se captura el evento de clic en el botón mediante `addEventListener`.
 - Se obtienen los valores del ancho y del alto desde los campos de entrada.
@@ -65,11 +65,10 @@ La página tiene dos campos de entrada de tipo `number` para el ancho (`width`) 
 - Uso de eventos `click` en JavaScript para interactividad.
 - Validación de valores de entradas numéricas en JavaScript.
 
-Si fue realizada con IA, las preguntas concretas fueron:
+Todo el contenido del HTML y JS ha sido dado por ayuda de ChatGPT:
 
-- ¿Cómo puedo capturar el valor de un campo de entrada de tipo `number` en JavaScript?
-- ¿Cómo puedo verificar si un valor es un número válido en JavaScript?
-- ¿Cómo se puede mostrar un resultado dinámicamente en la página web utilizando JavaScript?
+- ¿Cómo asigno el valor de dos campos de un HTML a un JS para multiplicar su valor con un boton?
+- ¿Cómo se puede mostrar el resultado?
 
 ## Prueba
 
@@ -78,7 +77,7 @@ En el GIF de demostración se mostrará cómo, al rellenar ambos campos de entra
 
 ### Demostración
 
-![Cálculo de área](/T1/SPRINT%201/Ejercicio%202/Ejercicio%202.gif)
+![Cálculo de área](/T1/SPRINT%201/Ejercicio%202/Ejercicio2.gif)
 
 ---
 
@@ -91,10 +90,10 @@ El ejercicio consiste en crear una página web con un campo de entrada de texto 
 
 ## Diseño
 
-**HTML (Ejercicio3.html):**  
+**HTML (ejercicio3.html):**  
 La página web tiene un campo de entrada de texto y un botón para agregar ítems a la lista. Al inicio, la lista (`<ul>`) está vacía y se llenará dinámicamente conforme el usuario agregue elementos. La estructura es sencilla, incluyendo solo un título, el campo de entrada, el botón, y la lista vacía.
 
-**JavaScript (Ejercicio3.js):**  
+**JavaScript (ejercicio3.js):**  
 
 - Se capturan los elementos del DOM correspondientes al campo de entrada, el botón y la lista vacía.
 - Se añade un event listener al botón para que al hacer clic, se obtenga el valor del campo de entrada.
@@ -108,10 +107,10 @@ La página web tiene un campo de entrada de texto y un botón para agregar ítem
 - Eventos de clic (`click`) en JavaScript.
 - Validación de entradas de texto en JavaScript.
 
-Si fue realizada con IA, las preguntas concretas fueron:
+Todo el contenido del HTML y JS ha sido dado por ayuda de ChatGPT:
 
-- ¿Cómo crear y agregar un nuevo elemento a una lista usando JavaScript?
-- ¿Cómo capturar el valor de un campo de entrada de texto en JavaScript?
+- ¿Cómo puedo agregar textos a una lista de HTML a JS?
+- ¿Cómo capturO el valor de un campo de entrada de texto en JavaScript?
 - ¿Cómo limpiar el campo de entrada después de agregar un valor a la lista?
 
 ## Prueba
@@ -121,7 +120,7 @@ En el GIF de demostración, se verá cómo se añaden tres elementos a la lista.
 
 ### Demostración
 
-![Listado dinámico](/T1/SPRINT%201/Ejercicio%203/Ejercicio%203.gif)
+![Listado dinámico](/T1/SPRINT%201/Ejercicio%203/Ejercicio3.gif)
 
 ---
 
@@ -134,10 +133,10 @@ El ejercicio consiste en diseñar una página web con varios elementos `div`, ca
 
 ## Diseño
 
-**HTML (Ejercicio4.html):**  
+**HTML (ejercicio4.html):**  
 La página contiene tres elementos `div`, cada uno con una clase llamada `hover-box` y un texto diferente. La funcionalidad de cambiar el color al pasar el ratón se implementa mediante JavaScript. El archivo HTML es simple, con un título y los `divs` que cambiarán de estilo al interactuar con el ratón.
 
-**JavaScript (Ejercicio4.js):**  
+**JavaScript (ejercicio4.js):**  
 
 - Se seleccionan todos los elementos `div` con la clase `hover-box` usando `querySelectorAll`.
 - Se añade un evento `mouseover` a cada `div` para que cuando el ratón pase sobre el elemento, el color de fondo cambie a azul y el color del texto a blanco.
@@ -148,10 +147,10 @@ La página contiene tres elementos `div`, cada uno con una clase llamada `hover-
 - Manipulación de estilos dinámicamente usando JavaScript.
 - Eventos `mouseover` y `mouseout` en JavaScript para interactuar con el ratón sobre elementos de la página.
   
-Si fue realizada con IA, las preguntas concretas fueron:
+Todo el contenido del HTML y JS ha sido dado por ayuda de ChatGPT:
 
 - ¿Cómo puedo cambiar el color de fondo de un elemento con JavaScript al pasar el ratón sobre él?
-- ¿Cómo restaurar el estilo original de un elemento con JavaScript cuando el ratón deja de estar sobre él?
+- ¿Cómo quito el color de un elemento con JavaScript cuando el ratón deja de estar sobre él?
 
 ## Prueba
 
@@ -160,7 +159,7 @@ En el GIF de demostración, se verá cómo al pasar el ratón sobre cada uno de 
 
 ### Demostración
 
-![Hover y estilo dinámico](/T1/SPRINT%201/Ejercicio%204/Ejercicio%204.gif)
+![Hover y estilo dinámico](/T1/SPRINT%201/Ejercicio%204/Ejercicio4.gif)
 
 ---
 
@@ -169,46 +168,72 @@ En el GIF de demostración, se verá cómo al pasar el ratón sobre cada uno de 
 ## Análisis
 
 **Descripción del ejercicio:**  
-El objetivo de este ejercicio es crear una página web que detecte clics en cualquier elemento del documento y en un `iframe`, generando y mostrando el XPath único de ese elemento en un cuadro de alerta o en una sección específica de la página.  
-Se deben seguir los siguientes pasos:
+En este ejercicio, se desarrolla una página web que detecta cualquier clic en los elementos de la página, incluyendo un botón en un `iframe`. Al hacer clic, se genera y muestra el XPath único del elemento seleccionado dentro de una sección de la página.
 
-1. Añadir un evento de escucha que detecte clics en cualquier elemento del documento principal y en un iframe.
-2. Al hacer clic en un elemento, generar su XPath.
-3. Mostrar el XPath generado en un cuadro de alerta.
+### Especificaciones
+
+1. **Detección de Clics:**
+   - Se añade un `eventListener` que detecta clics en el documento.
+   - Al detectar el clic, se captura el elemento clicado con `event.target`.
+
+2. **Generación de XPath:**
+   - El XPath único del elemento clicado se genera y se muestra en un `<p>` con el id `reconocimiento`.
 
 ## Diseño
 
-**HTML (Ejercicio5.html):**  
-El HTML incluye un botón principal y un `iframe` con su propio botón. La estructura está diseñada para que los clics se detecten tanto en el documento principal como dentro del `iframe`. El `iframe` contiene un documento HTML embebido con otro botón.  
-Se incluye un script que añade los eventos de clic para capturar los eventos en ambos contextos (documento principal y `iframe`).
+**HTML (ejercicio5.html):**  
 
-**JavaScript (Ejercicio5.js):**  
+- Contiene un botón principal (`Botón Principal`) y un `iframe` que incluye otro botón (`Botón Iframe`).
+- Se añade un párrafo (`<p id="reconocimiento">`) donde se mostrará el XPath del elemento clicado.
 
-- **Función `getXPath(element)`:**  
-  Esta función se encarga de generar el XPath único de un elemento dado. Si el elemento tiene un ID, se utiliza directamente en el XPath. Si no, se recorre el DOM para construir el XPath según la jerarquía de elementos.
+**JavaScript (ejercicio4.js):**  
+
+El archivo de JavaScript incluye las siguientes funcionalidades:
+
+- **Función `getXPath(element)`**:
+  - Esta función genera el XPath del elemento dado como parámetro.
+  - Si el elemento tiene un atributo `id`, genera un XPath absoluto basado en dicho `id`, por ejemplo: `//*[@id='mainButton']`.
+  - Si el elemento no tiene `id`, la función recorre su árbol DOM ascendiendo a los nodos superiores (hasta llegar al `body`), para crear un XPath basado en la estructura y la posición relativa del elemento en el documento.
   
-- **Detección de clics en el documento principal:**  
-  Se añade un `eventListener` para escuchar clics en cualquier parte del documento. Cuando se detecta un clic, se llama a la función `getXPath` y se muestra el resultado en un cuadro de alerta.
+- **Función `handleClick(event)`**:
+  - Esta función actúa como manejadora del evento de clic.
+  - Captura el elemento clicado utilizando `event.target` y luego llama a la función `getXPath` para generar el XPath correspondiente.
+  - Una vez que obtiene el XPath, lo pasa a la función `updateOutput` para mostrarlo en la página.
 
-- **Detección de clics en el `iframe`:**  
-  Después de cargar el `iframe`, se añade un `eventListener` al documento del `iframe` para detectar clics dentro de él. Esto asegura que los clics en el botón del `iframe` también generen el XPath correspondiente.
+- **Función `updateOutput(xpath)`**:
+  - Esta función toma el XPath generado y lo muestra en el elemento HTML con `id="reconocimiento"`.
+  - Básicamente, actualiza el contenido del párrafo donde se presentará el XPath generado.
+
+- **Función `initialize()`**:
+  - Esta función inicializa la lógica del script y agrega un `eventListener` que detecta todos los clics que ocurren en el documento.
+  - Cuando el documento carga, llama a esta función para asegurarse de que los eventos se gestionen correctamente desde el inicio.
+
+**Flujo del código**
+
+1. Cuando un usuario hace clic en cualquier parte de la página, se ejecuta la función `handleClick`, que identifica el elemento clicado usando `event.target`.
+2. Se genera el XPath del elemento usando `getXPath` y luego se muestra en el párrafo `<p id="reconocimiento">` mediante `updateOutput`.
+3. Si se hace clic en el botón dentro del `iframe`, también se captura ese clic y su XPath se genera y muestra.
 
 **Bibliografía general usada para hacer el ejercicio:**  
-
-- Uso de `event.target` para capturar elementos en eventos de clic.
-- Cómo generar XPath dinámicamente.
-- Eventos dentro de `iframes`.
   
-Si fue realizada con IA, las preguntas concretas fueron:
+Todo el contenido del HTML y JS ha sido dado por ayuda de ChatGPT:
 
-- ¿Cómo puedo generar el XPath de un elemento en JavaScript?
-- ¿Cómo puedo detectar clics dentro de un iframe y obtener su XPath?
-  
+- ¿Dentro de este HTML se esta definiendo otro HTML?
+- ¿Como deberia definir el boton iframe en un codigo JS?
+- ¿Como puedo contrar elementos XPATH de un HTML?
+- ¿Como los defino en un `<p>` de HTML?F
+
 ## Prueba
 
 **Descripción de la demostración:**  
-En el GIF de demostración, se verá cómo se hacen clics sobre diferentes elementos, tanto en el botón principal como en el botón dentro del `iframe`, y cómo cada clic genera un cuadro de alerta que muestra el XPath relativo del elemento clicado.
+En el GIF de demostración, se verá como al hacer clic en los elementos visibles y no visibles de la web, mediante el parrafo definido debajo del boton principal podremos encontrar los formatos XPATH que define a cada elemento.
 
 ### Demostración
 
-![Detección de clics y XPath](/T1/SPRINT%201/Ejercicio%205/Ejercicio5.gif)
+![Detección de Clics y Generación de XPath](/T1/SPRINT%201/Ejercicio%205/Ejercicio5.gif)
+
+**ANOTACION FINAL**
+
+Debido a que estamos empezando a utilizar JS y es complicado de manejar le he dado una ultima tarea a ChatGPT para aprender mejor lo que esta ocurriendo en cada funcion de cada JS:
+
+- Voy a darte un HTML y un JS, quiero que hagas comentarios definiendo lo que ocurre en cada linea de codigo del JS, solo del JS: `codigo HTML` `codigo JS`.
