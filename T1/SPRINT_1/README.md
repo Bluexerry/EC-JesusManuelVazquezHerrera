@@ -35,7 +35,7 @@ En el GIF de demostración se verá cómo, al hacer clic repetidamente en el bot
 
 ### Demostración
 
-![Cambio de color](/Ejercicio_1/Ejercicio1.gif)
+![Cambio de color](./Ejercicio_1/Ejercicio1.gif)
 
 ---
 
