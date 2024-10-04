@@ -77,7 +77,7 @@ En el GIF de demostración se mostrará cómo, al rellenar ambos campos de entra
 
 ### Demostración
 
-![Cálculo de área](/Ejercicio_2/Ejercicio2.gif)
+![Cálculo de área](./Ejercicio_2/Ejercicio2.gif)
 
 ---
 
@@ -120,7 +120,7 @@ En el GIF de demostración, se verá cómo se añaden tres elementos a la lista.
 
 ### Demostración
 
-![Listado dinámico](/Ejercicio_3/Ejercicio3.gif)
+![Listado dinámico](./Ejercicio_3/Ejercicio3.gif)
 
 ---
 
@@ -159,7 +159,7 @@ En el GIF de demostración, se verá cómo al pasar el ratón sobre cada uno de 
 
 ### Demostración
 
-![Hover y estilo dinámico](/Ejercicio_4/Ejercicio4.gif)
+![Hover y estilo dinámico](./Ejercicio_4/Ejercicio4.gif)
 
 ---
 
@@ -230,7 +230,7 @@ En el GIF de demostración, se verá como al hacer clic en los elementos visible
 
 ### Demostración
 
-![Detección de Clics y Generación de XPath](/Ejercicio_5/Ejercicio5.gif)
+![Detección de Clics y Generación de XPath](./Ejercicio_5/Ejercicio5.gif)
 
 **ANOTACION FINAL**
 
