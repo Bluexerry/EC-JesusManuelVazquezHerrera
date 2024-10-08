@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8"> <!-- Establece la codificación de caracteres a UTF-8 -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- Hace que el diseño sea responsivo -->
+    <title>Encuesta de Empresas de Videojuegos</title> <!-- Título que aparece en la pestaña del navegador -->
+</head>
+
+<body>
+
+    <h1>Encuesta: ¿Cuál es tu empresa de videojuegos favorita?</h1>
+
+    <!-- Opciones de votación -->
+    <form id="surveyForm">
+        <table border="1" cellpadding="10">
+            <thead>
+                <tr>
+                    <th>Selecciona tu empresa favorita</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><input type="radio" name="company" value="Nintendo"> Nintendo</td>
+                </tr>
+                <tr>
+                    <td><input type="radio" name="company" value="Sony"> Sony</td>
+                </tr>
+                <tr>
+                    <td><input type="radio" name="company" value="Microsoft"> Microsoft</td>
+                </tr>
+                <tr>
+                    <td><input type="radio" name="company" value="Ubisoft"> Ubisoft</td>
+                </tr>
+                <tr>
+                    <td><input type="radio" name="company" value="EA"> Electronic Arts (EA)</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <br>
+        <button type="button" id="submitBtn">Enviar</button>
+    </form>
+
+    <!-- Resultados de la encuesta -->
+    <h2>Resultados:</h2>
+    <table border="1" cellpadding="10" width="50%">
+        <thead>
+            <tr>
+                <th>Empresa</th>
+                <th>Votos</th>
+                <th>Gráfico</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Nintendo</td>
+                <td id="countNintendo">0</td>
+                <td>
+                    <div id="barNintendo" style="height:20px; width:0; background-color:red;"></div>
+                </td>
+            </tr>
+            <tr>
+                <td>Sony</td>
+                <td id="countSony">0</td>
+                <td>
+                    <div id="barSony" style="height:20px; width:0; background-color:blue;"></div>
+                </td>
+            </tr>
+            <tr>
+                <td>Microsoft</td>
+                <td id="countMicrosoft">0</td>
+                <td>
+                    <div id="barMicrosoft" style="height:20px; width:0; background-color:green;"></div>
+                </td>
+            </tr>
+            <tr>
+                <td>Ubisoft</td>
+                <td id="countUbisoft">0</td>
+                <td>
+                    <div id="barUbisoft" style="height:20px; width:0; background-color:orange;"></div>
+                </td>
+            </tr>
+            <tr>
+                <td>Electronic Arts (EA)</td>
+                <td id="countEA">0</td>
+                <td>
+                    <div id="barEA" style="height:20px; width:0; background-color:purple;"></div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+
+    <script src="ejercicio3.js"></script> <!-- Vincula el archivo JavaScript externo 'ejercicio3.js' -->
+</body>
+
+</html>

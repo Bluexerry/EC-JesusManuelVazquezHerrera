@@ -1,0 +1,36 @@
+<!DOCTYPE html> <!-- Define el tipo de documento como HTML5 -->
+<html lang="es"> <!-- Indica que el idioma del contenido es español -->
+
+<head>
+    <meta charset="UTF-8"> <!-- Establece la codificación de caracteres a UTF-8 -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- Hace que el diseño sea responsivo -->
+    <title>Calculadora Básica</title> <!-- Título que aparece en la pestaña del navegador -->
+</head>
+
+<body>
+
+    <h1>Calculadora Básica</h1> <!-- Título principal de la página -->
+
+    <!-- Campos para ingresar los números -->
+    <input type="number" id="num1" placeholder="Número 1"> <!-- Campo de entrada para el primer número -->
+    <input type="number" id="num2" placeholder="Número 2"> <!-- Campo de entrada para el segundo número -->
+
+    <!-- Lista de selección para elegir la operación -->
+    <select id="operation"> <!-- Menú desplegable para seleccionar la operación -->
+        <option value="sum">Suma (+)</option> <!-- Opción para sumar -->
+        <option value="subtract">Resta (-)</option> <!-- Opción para restar -->
+        <option value="multiply">Multiplicación (*)</option> <!-- Opción para multiplicar -->
+        <option value="divide">División (/)</option> <!-- Opción para dividir -->
+    </select>
+
+    <!-- Botón para calcular -->
+    <button id="calculateBtn">Calcular</button> <!-- Botón que inicia el cálculo -->
+
+    <!-- Área para mostrar el resultado -->
+    <div id="result">Resultado: </div> <!-- Div que muestra el resultado del cálculo -->
+
+    <script src="ejercicio2.js"></script> <!-- Vincula el archivo JavaScript externo 'ejercicio2.js' -->
+
+</body>
+
+</html>
