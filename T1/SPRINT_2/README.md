@@ -37,7 +37,13 @@ Para probar el temporizador, se debe abrir el archivo HTML en un navegador. El u
 
 ### Demostración
 
-![Temporizador](./Ejercicio_1/Ejercicio1.gif)
+**1. Rellenar el campo de tiempo con el valor 2 segundos y pulsar el botón "Iniciar", verificando que el temporizador cuenta correctamente y muestra una alerta al terminar los 2 segundos.**  
+
+![Contrarreloj](./Ejercicio_1/Ejercicio1.1.gif)
+
+**2. Repetir la prueba con el valor 4 segundos, asegurándose de que el temporizador cuenta hasta los 4 segundos y que al finalizar se muestra la alerta correspondiente.**  
+
+![Contrarreloj](./Ejercicio_1/Ejercicio1.2.gif)
 
 ---
 
@@ -81,7 +87,21 @@ Para probar la calculadora, se debe abrir el archivo HTML en un navegador. El us
 
 ### Demostración
 
-![Calculadora Básica](./Ejercicio_2/Ejercicio2.gif)
+**1. Probar que la suma de 10 + 12 muestra correctamente el resultado de 22.**  
+
+![Calculadora básica](./Ejercicio_2/Ejercicio2.1.gif)
+
+**2. Verificar que la resta de 10 - 12 devuelve el valor esperado de -2.**  
+
+![Calculadora básica](./Ejercicio_2/Ejercicio2.2.gif)
+
+**3. Comprobar que la multiplicación de 5x4 es 20, y que 5x0 devuelve 0.**  
+
+![Calculadora básica](./Ejercicio_2/Ejercicio2.3.gif)
+
+**4. Probar que la división de 5/4 es 1.25 y que 5/0 devuelve el mensaje "INDEFINIDO".**  
+
+![Calculadora básica](./Ejercicio_2/Ejercicio2.4.gif)
 
 ---
 
@@ -134,7 +154,21 @@ Para realizar la encuesta, el usuario debe abrir el archivo HTML en un navegador
 
 ### Demostración
 
-![Encuesta de Empresas de Videojuegos](./Ejercicio_3/Ejercicio3.gif)
+**1. Verificar que al seleccionar una opción y hacer clic en "Enviar", se actualicen correctamente los votos en el gráfico.**  
+
+![Encuesta](./Ejercicio_3/Ejercicio3.1.gif)
+
+**2. Comprobar que el gráfico de barras se actualiza dinámicamente después de cada nueva votación.**  
+
+![Encuesta](./Ejercicio_3/Ejercicio3.2.gif)
+
+**3. Probar que el sistema gestiona correctamente intentos de envío sin seleccionar ninguna opción.**  
+
+![Encuesta](./Ejercicio_3/Ejercicio3.3.gif)
+
+**4. Verificar que las votaciones previas se mantienen después de varias interacciones.**  
+
+![Encuesta](./Ejercicio_3/Ejercicio3.4.gif)
 
 ---
 
@@ -179,7 +213,21 @@ Para probar el cronómetro, el usuario debe abrir el archivo HTML en un navegado
 
 ### Demostración
 
-![Cronómetro](./Ejercicio_4/Ejercicio4.gif)
+**1. Probar que el cronómetro comienza a contar correctamente al hacer clic en "Iniciar".**  
+
+![Cronometro](./Ejercicio_4/Ejercicio4.1.gif)
+
+**2. Comprobar que al pausar el cronómetro se detiene en el tiempo actual y no continúa avanzando.**  
+
+![Cronometro](./Ejercicio_4/Ejercicio4.2.gif)
+
+**3. Verificar que al hacer clic en "Reiniciar", el cronómetro vuelve a cero.**  
+
+![Cronometro](./Ejercicio_4/Ejercicio4.3.gif)
+
+**4. Probar que el cronómetro maneja correctamente largos períodos de tiempo sin errores.**  
+
+![Cronometro](./Ejercicio_4/Ejercicio4.4.gif)
 
 ---
 
@@ -228,7 +276,21 @@ Para probar el juego de memoria, el usuario debe abrir el archivo HTML en un nav
 
 ### Demostración
 
-![Juego de Memoria](./Ejercicio_5/Ejercicio5.gif)
+**1. Verificar que las cartas se voltean al hacer clic y se quedan volteadas si coinciden.**  
+
+![Juego](./Ejercicio_5/Ejercicio5.1.gif)
+
+**2. Comprobar que dos cartas no coincidentes se voltean de nuevo después de un breve intervalo.**  
+
+![Juego](./Ejercicio_5/Ejercicio5.2.gif)
+
+**3. Probar que el juego detecta cuando se han encontrado todas las parejas y muestra un mensaje de finalización.**  
+
+![Juego](./Ejercicio_5/Ejercicio5.3.gif)
+
+**4. Verificar que el juego puede reiniciarse correctamente barajando las cartas de nuevo.**  
+
+![Juego](./Ejercicio_5/Ejercicio5.4.gif)
 
 ---
 
