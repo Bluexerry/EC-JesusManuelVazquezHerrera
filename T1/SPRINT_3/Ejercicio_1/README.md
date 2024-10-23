@@ -26,6 +26,7 @@ Este ejercicio consiste en gestionar un conjunto de estudiantes, permitiendo rea
       - **`slice()`**: Toma una parte del array, específicamente los primeros tres elementos (estudiantes) después de haber sido ordenados.
       - **`map()`**: Crea un nuevo array que contiene solo los nombres de los estudiantes destacados.
 
+    **Prueba**  
     ![Estudiantes destacados por asignatura](./Pruebas/Ejercicio_1.gif)
 
     ### Parte 2: Asignatura con Menor Rendimiento
@@ -37,6 +38,7 @@ Este ejercicio consiste en gestionar un conjunto de estudiantes, permitiendo rea
       - **`forEach()`**: Itera sobre cada elemento del array de asignaturas para calcular el promedio de cada una.
       - **`reduce()`**: Suma todas las calificaciones para calcular el promedio de cada asignatura.
 
+    **Prueba**  
     ![Asignatura con menor rendimiento](./Pruebas/Ejercicio_2.gif)
 
     ### Parte 3: Mejora de Notas para Estudiantes con Beca
@@ -50,6 +52,7 @@ Este ejercicio consiste en gestionar un conjunto de estudiantes, permitiendo rea
       - **`Math.min()`**: Asegura que la calificación no supere el 10.
       - **`filter()`**: Filtra el array resultante para eliminar los estudiantes que no tienen beca.
 
+    **Prueba**  
     ![Mejora de notas](./Pruebas/Ejercicio_3.gif)
 
     ### Parte 4: Filtrado por Ciudad y Asignatura
@@ -62,6 +65,7 @@ Este ejercicio consiste en gestionar un conjunto de estudiantes, permitiendo rea
       - **`localeCompare()`**: Compara cadenas de texto según las reglas del idioma, asegurando un ordenamiento correcto de los nombres.
       - **`map()`**: Crea un nuevo array que contiene solo la información relevante (nombre, ciudad y calificación) de cada estudiante.
 
+    **Prueba**  
     ![Filtrado por ciudad y asignatura](./Pruebas/Ejercicio_4.gif)
 
     ### Parte 5: Estudiantes Sin Beca por Ciudad
@@ -73,6 +77,7 @@ Este ejercicio consiste en gestionar un conjunto de estudiantes, permitiendo rea
       - **`map()`**: Crea un nuevo array que contiene solo los nombres de los estudiantes sin beca.
       - **`join()`**: Combina los nombres en una cadena separada por comas.
 
+    **Prueba**  
     ![Estudiantes sin beca por ciudad](./Pruebas/Ejercicio_5.gif)
 
     ### Parte 6: Promedio de Edad de Estudiantes con Beca
@@ -84,6 +89,7 @@ Este ejercicio consiste en gestionar un conjunto de estudiantes, permitiendo rea
       - **`reduce()`**: Suma las edades de los estudiantes con beca.
       - **`Math.round()`**: Redondea el resultado del promedio al número entero más cercano.
 
+    **Prueba**  
     ![Promedio de edad de estudiantes con beca](./Pruebas/Ejercicio_6.gif)
 
     ### Parte 7: Mejores Estudiantes en Total
@@ -97,6 +103,7 @@ Este ejercicio consiste en gestionar un conjunto de estudiantes, permitiendo rea
       - **`sort()`**: Ordena a los estudiantes en función de sus promedios, de mayor a menor.
       - **`slice()`**: Obtiene solo los cinco mejores estudiantes.
 
+    **Prueba**  
     ![Mejores estudiantes en total](./Pruebas/Ejercicio_7.gif)
 
     ### Parte 8: Estudiantes con Todas las Materias Aprobadas
@@ -111,12 +118,19 @@ Este ejercicio consiste en gestionar un conjunto de estudiantes, permitiendo rea
       - **`sort()`**: Ordena los nombres de los estudiantes alfabéticamente.
       - **`join()`**: Combina todos los nombres en un solo string, separándolos con saltos de línea.
 
+    **Prueba**  
     ![Estudiantes con todas las materias aprobadas](./Pruebas/Ejercicio_8.gif)
 
 **Bibliografía general usada para hacer el ejercicio:**  
 Todo el contenido del JavaScript ha sido desarrollado con la asistencia de ChatGPT.
 
-## Prueba
-
-**Descripción de la demostración:**  
-Para probar la gestión de estudiantes, se debe ejecutar el archivo JavaScript en un entorno que soporte JavaScript (como Node.js). Se imprimirán en consola los resultados de las diferentes funciones implementadas.
+- Copy/Paste directo del ejercicio
+- Quiero hacer las pruebas en consola, no me hace falta un HTML
+- Arregla entonces la funcion 3 para que funcione
+- Vale, hemos avanzado, pero me esta dando demasiados numeros (te doy un ejemplo de lo que me esta dando)
+- Okey, va perfecto, Ahora vayamos a un error en la funciona de filtro por ciudad y asignatura, me da este resultado
+- Perfecto, ahora estan ordenados, pero quiero que cuando lo printee en consola solo se vean los nombres y la asignatura
+- Repite ese codigo pero quita ese ultimo const que usas para el console log, lo quiero limpio
+- Genial, funciona, añade la ciudad tambien
+- Funciona. Ahora arregla la función 5 para que me de el resultado de esta manera:
+- Arregla este .md:
