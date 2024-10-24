@@ -27,7 +27,9 @@ Este ejercicio consiste en gestionar un conjunto de estudiantes, permitiendo rea
       - **`map()`**: Crea un nuevo array que contiene solo los nombres de los estudiantes destacados.
 
     **Prueba**  
-    ![Estudiantes destacados por asignatura](./Pruebas/Ejercicio_1.gif)
+    ![Estudiantes destacados por asignatura](./Pruebas/Prueba_1.gif)
+
+    ---
 
     ### Parte 2: Asignatura con Menor Rendimiento
 
@@ -39,7 +41,9 @@ Este ejercicio consiste en gestionar un conjunto de estudiantes, permitiendo rea
       - **`reduce()`**: Suma todas las calificaciones para calcular el promedio de cada asignatura.
 
     **Prueba**  
-    ![Asignatura con menor rendimiento](./Pruebas/Ejercicio_2.gif)
+    ![Asignatura con menor rendimiento](./Pruebas/Prueba_2.gif)
+
+    ---
 
     ### Parte 3: Mejora de Notas para Estudiantes con Beca
 
@@ -53,7 +57,9 @@ Este ejercicio consiste en gestionar un conjunto de estudiantes, permitiendo rea
       - **`filter()`**: Filtra el array resultante para eliminar los estudiantes que no tienen beca.
 
     **Prueba**  
-    ![Mejora de notas](./Pruebas/Ejercicio_3.gif)
+    ![Mejora de notas](./Pruebas/Prueba_3.gif)
+
+    ---
 
     ### Parte 4: Filtrado por Ciudad y Asignatura
 
@@ -66,7 +72,9 @@ Este ejercicio consiste en gestionar un conjunto de estudiantes, permitiendo rea
       - **`map()`**: Crea un nuevo array que contiene solo la información relevante (nombre, ciudad y calificación) de cada estudiante.
 
     **Prueba**  
-    ![Filtrado por ciudad y asignatura](./Pruebas/Ejercicio_4.gif)
+    ![Filtrado por ciudad y asignatura](./Pruebas/Prueba_4.gif)
+
+    ---
 
     ### Parte 5: Estudiantes Sin Beca por Ciudad
 
@@ -78,7 +86,9 @@ Este ejercicio consiste en gestionar un conjunto de estudiantes, permitiendo rea
       - **`join()`**: Combina los nombres en una cadena separada por comas.
 
     **Prueba**  
-    ![Estudiantes sin beca por ciudad](./Pruebas/Ejercicio_5.gif)
+    ![Estudiantes sin beca por ciudad](./Pruebas/Prueba_5.gif)
+
+    ---
 
     ### Parte 6: Promedio de Edad de Estudiantes con Beca
 
@@ -90,7 +100,9 @@ Este ejercicio consiste en gestionar un conjunto de estudiantes, permitiendo rea
       - **`Math.round()`**: Redondea el resultado del promedio al número entero más cercano.
 
     **Prueba**  
-    ![Promedio de edad de estudiantes con beca](./Pruebas/Ejercicio_6.gif)
+    ![Promedio de edad de estudiantes con beca](./Pruebas/Prueba_6.gif)
+
+    ---
 
     ### Parte 7: Mejores Estudiantes en Total
 
@@ -104,7 +116,9 @@ Este ejercicio consiste en gestionar un conjunto de estudiantes, permitiendo rea
       - **`slice()`**: Obtiene solo los cinco mejores estudiantes.
 
     **Prueba**  
-    ![Mejores estudiantes en total](./Pruebas/Ejercicio_7.gif)
+    ![Mejores estudiantes en total](./Pruebas/Prueba_7.gif)
+
+    ---
 
     ### Parte 8: Estudiantes con Todas las Materias Aprobadas
 
@@ -119,7 +133,9 @@ Este ejercicio consiste en gestionar un conjunto de estudiantes, permitiendo rea
       - **`join()`**: Combina todos los nombres en un solo string, separándolos con saltos de línea.
 
     **Prueba**  
-    ![Estudiantes con todas las materias aprobadas](./Pruebas/Ejercicio_8.gif)
+    ![Estudiantes con todas las materias aprobadas](./Pruebas/Prueba_8.gif)
+
+    ---
 
 **Bibliografía general usada para hacer el ejercicio:**  
 Todo el contenido del JavaScript ha sido desarrollado con la asistencia de ChatGPT.
