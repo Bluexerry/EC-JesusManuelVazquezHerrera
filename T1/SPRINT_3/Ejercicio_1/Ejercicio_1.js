@@ -111,7 +111,7 @@ function mejoresEstudiantes(estudiantes) {
             promedio: Object.values(est.calificaciones).reduce((sum, nota) => sum + nota, 0) / Object.keys(est.calificaciones).length
         }))
         .sort((a, b) => b.promedio - a.promedio)
-        .slice(0, 5) // Cambiado para tomar los cinco mejores
+        .slice(0, 2) // Cambiado para tomar los cinco mejores
         .map(est => est.nombre)
         .join('\n'); // Une los nombres con un salto de línea
 }

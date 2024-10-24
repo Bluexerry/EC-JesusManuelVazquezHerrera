@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PokeAPI Ejercicio</title>
+    <link rel="stylesheet" href="Ejercicio_3.css">
+</head>
+
+<body>
+    <h1>Información de Pokémon</h1>
+
+    <!-- Formulario para obtener información básica de un Pokémon -->
+    <section>
+        <h2>Búsqueda de Pokémon</h2>
+        <input type="text" id="nombrePokemon" placeholder="Ingresa nombre del Pokémon">
+        <button onclick="obtenerInfoBasicaPokemon(document.getElementById('nombrePokemon').value)">Buscar
+            Pokémon</button>
+        <div id="pokemonInfo"></div>
+    </section>
+
+    <!-- Comparativa de Pokémon -->
+    <section>
+        <h2>Comparar Pokémon</h2>
+        <input type="text" id="pokemon1" placeholder="Primer Pokémon">
+        <input type="text" id="pokemon2" placeholder="Segundo Pokémon">
+        <button
+            onclick="compararPokemon(document.getElementById('pokemon1').value, document.getElementById('pokemon2').value)">Comparar</button>
+        <div id="comparativaPokemon"></div>
+    </section>
+
+    <!-- Cadena evolutiva -->
+    <section>
+        <h2>Cadena Evolutiva</h2>
+        <input type="text" id="nombrePokemonEvolucion" placeholder="Ingresa nombre del Pokémon">
+        <button onclick="obtenerCadenaEvolutiva(document.getElementById('nombrePokemonEvolucion').value)">Ver Cadena
+            Evolutiva</button>
+        <div id="evolutionInfo"></div>
+    </section>
+
+    <script src="Ejercicio_2.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,146 @@
+/* Estilos globales */
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f2f2f2;
+    color: #333;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+}
+
+h1 {
+    color: #ff6347;
+    font-size: 3rem;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+h2 {
+    color: #4682b4;
+    font-size: 2rem;
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+section {
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    margin: 20px;
+    width: 80%;
+    max-width: 600px;
+    text-align: center;
+}
+
+/* Estilos para los inputs y botones */
+input[type="text"] {
+    width: 80%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 2px solid #4682b4;
+    border-radius: 5px;
+    font-size: 1rem;
+}
+
+button {
+    padding: 10px 20px;
+    background-color: #ff6347;
+    border: none;
+    border-radius: 5px;
+    color: #fff;
+    font-size: 1.1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin-top: 10px;
+}
+
+button:hover {
+    background-color: #ff4500;
+}
+
+/* Estilos para la visualización de información */
+#pokemonInfo,
+#comparativaPokemon,
+#evolutionInfo {
+    margin-top: 20px;
+    padding: 10px;
+    border: 2px solid #4682b4;
+    border-radius: 10px;
+    background-color: #fafafa;
+}
+
+img {
+    max-width: 150px;
+    height: auto;
+    margin-top: 10px;
+}
+
+/* Estilos para tablas comparativas */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 15px;
+}
+
+th,
+td {
+    padding: 10px;
+    border: 1px solid #ddd;
+    text-align: center;
+}
+
+th {
+    background-color: #4682b4;
+    color: white;
+}
+
+td {
+    background-color: #f9f9f9;
+}
+
+/* Estilos para mensajes de error */
+.error {
+    color: red;
+    font-weight: bold;
+}
+
+/* Estilo para la sección de habilidades */
+#habilidades-list li {
+    list-style: none;
+    margin: 10px 0;
+}
+
+#habilidades-list button {
+    padding: 5px 10px;
+    font-size: 0.9rem;
+    margin-left: 10px;
+    background-color: #4682b4;
+}
+
+#habilidades-list button:hover {
+    background-color: #4169e1;
+}
+
+/* Estilos responsivos */
+@media (max-width: 600px) {
+    h1 {
+        font-size: 2.5rem;
+    }
+
+    h2 {
+        font-size: 1.8rem;
+    }
+
+    section {
+        width: 90%;
+    }
+
+    input[type="text"] {
+        width: 100%;
+    }
+}
