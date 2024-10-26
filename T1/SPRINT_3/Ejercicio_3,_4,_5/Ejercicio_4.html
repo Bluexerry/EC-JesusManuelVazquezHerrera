@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Party Finder - Crear Party</title>
+    <link rel="stylesheet" href="Ejercicio_4.css">
+</head>
+
+<body>
+    <div class="container">
+        <h1>Crear una Party</h1>
+        <form id="createPartyForm">
+            <label for="partySize">Party Size</label>
+            <select id="partySize" required>
+                <option value="">Seleccione el tamaño</option>
+                <option value="3">3</option>
+                <option value="5">5</option>
+                <option value="8">8</option>
+            </select>
+
+            <label for="creatorId">Creator ID</label>
+            <input type="text" id="creatorId" required>
+
+            <label for="levelCap">Level Cap</label>
+            <input type="number" id="levelCap" min="1" required>
+
+            <label for="ilvlCap">ILevel Cap</label>
+            <input type="number" id="ilvlCap" min="1" required>
+
+            <label for="partyRole">Party Role</label>
+            <select id="partyRole" required>
+                <option value="">Seleccione el rol</option>
+                <option value="TANK">TANK</option>
+                <option value="HEALER">HEALER</option>
+                <option value="DAMAGE">DAMAGE</option>
+                <option value="SUPPORT">SUPPORT</option>
+            </select>
+
+            <label for="plannedStart">Planned Start (DD/MM/YYYY_HH:mm)</label>
+            <input type="text" id="plannedStart" placeholder="DD/MM/YYYY_HH:mm" required>
+
+            <button type="submit">Crear Party</button>
+        </form>
+
+        <h2>Parties Creadas</h2>
+        <ul id="partyList"></ul>
+    </div>
+
+    <script src="Ejercicio_4.js"></script>
+</body>
+
+</html>
