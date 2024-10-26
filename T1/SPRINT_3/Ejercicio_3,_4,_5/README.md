@@ -1,4 +1,4 @@
-# Ejercicio: Gestión de Miembros de Guilda
+# Ejercicio 3: Gestión de Miembros
 
 ## Análisis
 
@@ -9,7 +9,7 @@ Este ejercicio consiste en implementar un sistema para gestionar miembros de una
 
 **Descripción de los componentes:**
 
-- **JavaScript (guildManagement.js):**  
+- **JavaScript (Ejercicio_3.js):**  
   Este archivo contiene el código que realiza las siguientes funciones:
 
   - **Funciones Implementadas:**
@@ -112,7 +112,7 @@ Todo el contenido del JavaScript ha sido desarrollado con la asistencia de ChatG
 
 ---
 
-# Ejercicio: Gestión de Parties
+# Ejercicio 4: Gestión de Parties
 
 ## Análisis
 
@@ -123,7 +123,7 @@ Este ejercicio consiste en implementar un sistema para gestionar la creación de
 
 **Descripción de los componentes:**
 
-- **JavaScript (partyFinder.js):**  
+- **JavaScript (Ejercicio_4.js):**  
   Este archivo contiene el código que realiza las siguientes funciones:
 
   - **Funciones Implementadas:**
