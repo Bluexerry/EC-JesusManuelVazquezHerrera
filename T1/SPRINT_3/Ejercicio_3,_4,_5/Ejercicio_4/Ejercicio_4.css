@@ -1,0 +1,57 @@
+/* Estilos básicos del formulario y mensajes */
+
+.container {
+    width: 400px;
+    margin: auto;
+    padding: 20px;
+    background-color: #f4f4f4;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+h2 {
+    text-align: center;
+    color: #333;
+}
+
+label {
+    display: block;
+    margin-top: 10px;
+    font-weight: bold;
+}
+
+input,
+select,
+button {
+    width: 100%;
+    padding: 8px;
+    margin-top: 5px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+button {
+    margin-top: 15px;
+    background-color: #13678A;
+    color: #fff;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #45C4B0;
+}
+
+#error-message {
+    color: red;
+    font-weight: bold;
+    text-align: center;
+}
+
+#success-message {
+    color: green;
+    font-weight: bold;
+    text-align: center;
+}

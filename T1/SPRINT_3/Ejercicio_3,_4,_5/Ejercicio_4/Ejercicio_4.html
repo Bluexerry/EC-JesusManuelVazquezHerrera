@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="Ejercicio_4.css">
+    <title>Party Finder</title>
+</head>
+
+<body>
+    <div class="container" id="formContainer">
+        <h2>Crear Party</h2>
+        <form id="partyForm">
+            <label for="partySize">Tamaño de la Party:</label>
+            <select id="partySize" name="partySize" required>
+                <option value="3">3</option>
+                <option value="5">5</option>
+                <option value="8">8</option>
+            </select>
+
+            <label for="creator_id">ID del Creador:</label>
+            <input type="text" id="creator_id" name="creator_id" required>
+
+            <label for="level_cap">Level Cap:</label>
+            <input type="number" id="level_cap" name="level_cap" min="1" required>
+
+            <label for="ilvl_cap">Item Level Cap:</label>
+            <input type="number" id="ilvl_cap" name="ilvl_cap" min="1" required>
+
+            <label for="party_role_creator">Rol del Creador:</label>
+            <select id="party_role_creator" name="party_role_creator" required>
+                <option value="TANK">TANK</option>
+                <option value="HEALER">HEALER</option>
+                <option value="DAMAGE">DAMAGE</option>
+                <option value="SUPPORT">SUPPORT</option>
+            </select>
+
+            <label for="planned_start">Fecha y Hora de Inicio (DD/MM/YYYY_HH:mm):</label>
+            <input type="text" id="planned_start" name="planned_start" placeholder="DD/MM/YYYY_HH:mm" required>
+
+            <button type="submit">Crear Party</button>
+            <button type="button" id="closeFormButton">Cerrar Formulario</button>
+            <p id="error-message"></p>
+            <p id="success-message"></p>
+        </form>
+    </div>
+
+    <script src="Ejercicio_4.js"></script>
+</body>
+
+</html>
