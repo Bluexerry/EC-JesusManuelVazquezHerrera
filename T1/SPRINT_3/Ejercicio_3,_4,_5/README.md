@@ -109,3 +109,7 @@ Este ejercicio consiste en implementar un sistema para gestionar miembros de una
 
 **Bibliografía general usada para hacer el ejercicio:**  
 Todo el contenido del JavaScript ha sido desarrollado con la asistencia de ChatGPT.
+
+    ---
+
+
