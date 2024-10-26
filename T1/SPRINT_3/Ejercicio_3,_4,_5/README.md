@@ -62,7 +62,7 @@ Este ejercicio consiste en implementar un sistema para gestionar miembros de una
   1. Abre la pantalla de gestión de miembros.
   2. Verifica que la tabla lista correctamente a los miembros con todos los campos mencionados.
 - **GIF:**
-  ![Visualización de Miembros](/Pruebas/Prueba_3.1.gif)
+  ![Visualización de Miembros](./Pruebas/Prueba_3.1.gif)
 
 ### Prueba 2: Añadir Nuevo Miembro
 
@@ -71,7 +71,7 @@ Este ejercicio consiste en implementar un sistema para gestionar miembros de una
   2. Llena el formulario con datos válidos y haz clic en "Add Member".
   3. Verifica que el nuevo miembro se muestra en la tabla y que los datos se han guardado correctamente en la API.
 - **GIF:**
-  ![Añadir Nuevo Miembro](/Pruebas/Prueba_3.2.gif)
+  ![Añadir Nuevo Miembro](./Pruebas/Prueba_3.2.gif)
 
 ### Prueba 3: Valoraciones erróneas de Añadir Miembro
 
@@ -79,7 +79,7 @@ Este ejercicio consiste en implementar un sistema para gestionar miembros de una
   1. Intenta añadir un miembro dejando el campo email vacío o con un formato no válido. Debe mostrar un error.
   2. Intenta añadir un miembro con un `user_id` que ya existe. Debe mostrar un error indicando que el `user_id` es único.
 - **GIF:**
-  ![Errores al Añadir Miembro](/Pruebas/Prueba_3.3.gif)
+  ![Errores al Añadir Miembro](./Pruebas/Prueba_3.3.gif)
 
 ### Prueba 4: Editar Miembro
 
@@ -88,7 +88,7 @@ Este ejercicio consiste en implementar un sistema para gestionar miembros de una
   2. Modifica los datos del miembro (por ejemplo, cambia el `level` y el `ilvl`).
   3. Guarda los cambios y verifica que se actualizan en la tabla y en la API.
 - **GIF:**
-  ![Editar Miembro](/Pruebas/Prueba_3.4.gif)
+  ![Editar Miembro](./Pruebas/Prueba_3.4.gif)
 
 ### Prueba 5: Eliminar Miembro
 
@@ -97,7 +97,7 @@ Este ejercicio consiste en implementar un sistema para gestionar miembros de una
   2. Confirma la acción de eliminación.
   3. Verifica que el miembro se ha eliminado de la tabla y de la API.
 - **GIF:**
-  ![Eliminar Miembro](/Pruebas/Prueba_3.5.gif)
+  ![Eliminar Miembro](./Pruebas/Prueba_3.5.gif)
 
 ### Prueba 6: Comportamiento del Modal
 
@@ -105,7 +105,7 @@ Este ejercicio consiste en implementar un sistema para gestionar miembros de una
   1. Abre el modal para añadir un miembro y cierra el modal sin realizar ninguna acción. Verifica que los campos del formulario se limpian correctamente al reabrir el modal.
   2. Haz clic en "Edit" para un miembro, edita algunos campos, y cierra el modal sin guardar. Verifica que los cambios no se guardan y los datos del miembro no se han modificado.
 - **GIF:**
-  ![Comportamiento del Modal](/Pruebas/Prueba_3.6.gif)
+  ![Comportamiento del Modal](./Pruebas/Prueba_3.6.gif)
 
 **Bibliografía general usada para hacer el ejercicio:**  
 Todo el contenido del JavaScript ha sido desarrollado con la asistencia de ChatGPT.
