@@ -1,57 +1,129 @@
-/* Estilos básicos del formulario y mensajes */
-
+/* Estilos del contenedor */
 .container {
-    width: 400px;
-    margin: auto;
-    padding: 20px;
-    background-color: #f4f4f4;
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    width: 100%;
+    max-width: 450px;
+    margin: 40px auto;
+    padding: 25px;
+    background-color: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    position: relative;
+    font-family: Arial, sans-serif;
 }
 
+/* Título */
 h2 {
     text-align: center;
-    color: #333;
+    color: #13678A;
+    font-size: 24px;
+    margin-bottom: 20px;
 }
 
+/* Estilos de etiquetas */
 label {
     display: block;
-    margin-top: 10px;
-    font-weight: bold;
-}
-
-input,
-select,
-button {
-    width: 100%;
-    padding: 8px;
-    margin-top: 5px;
-    border: 1px solid #ddd;
-    border-radius: 4px;
-    box-sizing: border-box;
-}
-
-button {
     margin-top: 15px;
+    color: #333333;
+    font-weight: 600;
+    font-size: 14px;
+}
+
+/* Estilos de campos de entrada y selecciones */
+input,
+select {
+    width: 100%;
+    padding: 10px;
+    margin-top: 8px;
+    border: 1px solid #cccccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+    font-size: 14px;
+    color: #555555;
+    background-color: #f9f9f9;
+    transition: border-color 0.3s ease;
+}
+
+input:focus,
+select:focus {
+    border-color: #45C4B0;
+    outline: none;
+}
+
+/* Botón enviar */
+button[type="submit"] {
+    margin-top: 20px;
+    padding: 10px 0;
     background-color: #13678A;
-    color: #fff;
-    font-weight: bold;
+    color: #ffffff;
+    font-weight: 600;
+    font-size: 16px;
+    border: none;
+    border-radius: 5px;
     cursor: pointer;
     transition: background-color 0.3s ease;
 }
 
-button:hover {
+button[type="submit"]:hover {
     background-color: #45C4B0;
 }
 
-#error-message {
-    color: red;
+/* Botón cerrar (equis) */
+.close-button {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: transparent;
+    border: none;
+    color: #666666;
+    font-size: 18px;
     font-weight: bold;
+    cursor: pointer;
+    transition: color 0.3s ease;
+}
+
+.close-button:hover {
+    color: #ff4d4d;
+}
+
+/* Mensajes de error y éxito */
+#error-message,
+#success-message {
     text-align: center;
+    font-size: 14px;
+    font-weight: 600;
+    margin-top: 15px;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+#error-message {
+    color: #d9534f;
+    background-color: #f8d7da;
+    border: 1px solid #f5c6cb;
 }
 
 #success-message {
-    color: green;
+    color: #28a745;
+    background-color: #d4edda;
+    border: 1px solid #c3e6cb;
+}
+
+/* Botón desplegable */
+#toggleFormButton {
+    display: block;
+    width: 160px;
+    margin: 20px auto;
+    padding: 10px;
+    background-color: #13678A;
+    color: #ffffff;
+    border: none;
+    border-radius: 5px;
     font-weight: bold;
-    text-align: center;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+#toggleFormButton:hover {
+    background-color: #45C4B0;
 }

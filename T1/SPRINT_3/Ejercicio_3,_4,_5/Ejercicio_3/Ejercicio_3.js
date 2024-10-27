@@ -1,7 +1,7 @@
 const apiUrl = "http://localhost:3000/guildmembers";
 let isEditing = false;
 let editingUserId = null;
-let existingUserIds = []; // Array para almacenar los user_id existentes
+let existingUserIds = [];
 
 // Evento para abrir el modal de añadir miembro
 document.getElementById("addMemberBtn").addEventListener("click", () => {
@@ -35,43 +35,46 @@ function closeModal() {
     editingUserId = null;
 }
 
-// EventListener para cerrar el modal
-document.querySelector(".close").addEventListener("click", closeModal);
-
 // Función para añadir o editar miembro
 document.getElementById("memberForm").addEventListener("submit", async (e) => {
     e.preventDefault();
 
+    // Verificación del valor de email antes de crear el objeto memberData
+    console.log("Email Value:", document.getElementById("email").value);
+
     const memberData = {
         user_id: document.getElementById("user_id").value,
         username: document.getElementById("username").value,
+        email: document.getElementById("email").value,  // Asegúrate de que el campo email esté incluido
         level: parseInt(document.getElementById("level").value),
         ilvl: parseInt(document.getElementById("ilvl").value),
         character_role: document.getElementById("character_role").value,
-        guild_role: document.getElementById("guild_role").value
+        guild_role: document.getElementById("guild_role").value,
+        main_archetype: document.getElementById("main_archetype").value,
+        secondary_archetype: document.getElementById("secondary_archetype").value,
+        grandmaster_profession_one: document.getElementById("grandmaster_profession_one").value,
+        grandmaster_profession_two: document.getElementById("grandmaster_profession_two").value,
+        notify_email: document.getElementById("notify_email").checked ? 1 : 0
     };
 
+    // Verificar si el email es capturado correctamente
+    console.log("Member Data:", memberData);
+
     try {
-        // Verificar si el user_id ya existe al intentar agregar un nuevo miembro
         if (!isEditing && existingUserIds.includes(memberData.user_id)) {
             throw new Error("El user ID ya está en uso. Debe ser único.");
         }
 
-        if (isEditing) {
-            const response = await fetch(`${apiUrl}/${editingUserId}`, {
-                method: "PUT",
-                headers: { "Content-Type": "application/json" },
-                body: JSON.stringify(memberData)
-            });
-            if (!response.ok) throw new Error("Failed to update member.");
-        } else {
-            const response = await fetch(apiUrl, {
-                method: "POST",
-                headers: { "Content-Type": "application/json" },
-                body: JSON.stringify(memberData)
-            });
-            if (!response.ok) throw new Error("Failed to add new member.");
-        }
+        const method = isEditing ? "PUT" : "POST";
+        const url = isEditing ? `${apiUrl}/${editingUserId}` : apiUrl;
+
+        const response = await fetch(url, {
+            method: method,
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify(memberData)
+        });
+
+        if (!response.ok) throw new Error(`Failed to ${isEditing ? "update" : "add"} member.`);
 
         closeModal();
         fetchMembers(); // Actualizar lista de miembros
@@ -80,6 +83,7 @@ document.getElementById("memberForm").addEventListener("submit", async (e) => {
         alert("Error al guardar el miembro: " + error.message);
     }
 });
+
 
 // Función para obtener miembros y actualizar la tabla
 async function fetchMembers() {
@@ -110,7 +114,7 @@ function renderTable(members) {
       <td>${member.character_role}</td>
       <td>${member.guild_role}</td>
       <td>
-        <button onclick="openEditModal('${member.user_id}', '${member.username}', '${member.level}', '${member.ilvl}', '${member.character_role}', '${member.guild_role}')">Edit</button>
+        <button onclick="openEditModal('${member.user_id}', '${member.username}', '${member.level}', '${member.ilvl}', '${member.character_role}', '${member.guild_role}', '${member.main_archetype}', '${member.secondary_archetype}', '${member.grandmaster_profession_one}', '${member.grandmaster_profession_two}', '${member.email}', ${member.notify_email})">Edit</button>
         <button onclick="deleteMember('${member.user_id}')">Delete</button>
       </td>
     `;
@@ -120,7 +124,7 @@ function renderTable(members) {
 }
 
 // Función para abrir el modal en modo edición
-function openEditModal(userId, username, level, ilvl, characterRole, guildRole) {
+function openEditModal(userId, username, level, ilvl, characterRole, guildRole, mainArchetype, secondaryArchetype, professionOne, professionTwo, email, notifyEmail) {
     openModal();
     document.getElementById("user_id").value = userId;
     document.getElementById("username").value = username;
@@ -128,6 +132,12 @@ function openEditModal(userId, username, level, ilvl, characterRole, guildRole) 
     document.getElementById("ilvl").value = ilvl;
     document.getElementById("character_role").value = characterRole;
     document.getElementById("guild_role").value = guildRole;
+    document.getElementById("main_archetype").value = mainArchetype;
+    document.getElementById("secondary_archetype").value = secondaryArchetype;
+    document.getElementById("grandmaster_profession_one").value = professionOne;
+    document.getElementById("grandmaster_profession_two").value = professionTwo;
+    document.getElementById("email").value = email;
+    document.getElementById("notify_email").checked = notifyEmail;
 
     isEditing = true;
     editingUserId = userId;

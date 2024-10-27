@@ -1,8 +1,20 @@
 document.addEventListener("DOMContentLoaded", () => {
     const form = document.getElementById("partyForm");
+    const formContainer = document.getElementById("formContainer");
+    const toggleFormButton = document.getElementById("toggleFormButton");
     const closeFormButton = document.getElementById("closeFormButton");
     const errorMessage = document.getElementById("error-message");
     const successMessage = document.getElementById("success-message");
+
+    // Mostrar/ocultar el formulario al hacer clic en el botón
+    toggleFormButton.addEventListener("click", () => {
+        formContainer.style.display = formContainer.style.display === "none" ? "block" : "none";
+        if (formContainer.style.display === "none") {
+            form.reset();
+            errorMessage.textContent = "";
+            successMessage.textContent = "";
+        }
+    });
 
     form.addEventListener("submit", async (e) => {
         e.preventDefault();
@@ -14,7 +26,6 @@ document.addEventListener("DOMContentLoaded", () => {
         const party_role_creator = document.getElementById("party_role_creator").value;
         const planned_start = document.getElementById("planned_start").value.trim();
 
-        // Validar campos obligatorios y formato de fecha
         const dateRegex = /^\d{2}\/\d{2}\/\d{4}_\d{2}:\d{2}$/;
         if (!creator_id || !party_role_creator || !planned_start) {
             errorMessage.textContent = "Error: Todos los campos son obligatorios.";
@@ -40,7 +51,6 @@ document.addEventListener("DOMContentLoaded", () => {
             return;
         }
 
-        // Crear nueva party a través de la API
         try {
             const response = await fetch(`http://localhost:3000/partyfinder/${partySize}`, {
                 method: "POST",
@@ -71,9 +81,9 @@ document.addEventListener("DOMContentLoaded", () => {
         }
     });
 
-    // Cerrar formulario y resetear campos
     closeFormButton.addEventListener("click", () => {
-        form.reset(); // Limpiar campos del formulario
+        formContainer.style.display = "none";
+        form.reset();
         errorMessage.textContent = "";
         successMessage.textContent = "";
     });

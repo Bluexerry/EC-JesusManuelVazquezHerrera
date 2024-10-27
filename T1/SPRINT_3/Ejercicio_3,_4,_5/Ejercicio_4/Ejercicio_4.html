@@ -9,7 +9,9 @@
 </head>
 
 <body>
-    <div class="container" id="formContainer">
+    <button id="toggleFormButton">Crear Party</button>
+    <div class="container" id="formContainer" style="display: none; position: relative;">
+        <button class="close-button" id="closeFormButton">✖</button>
         <h2>Crear Party</h2>
         <form id="partyForm">
             <label for="partySize">Tamaño de la Party:</label>
@@ -40,12 +42,10 @@
             <input type="text" id="planned_start" name="planned_start" placeholder="DD/MM/YYYY_HH:mm" required>
 
             <button type="submit">Crear Party</button>
-            <button type="button" id="closeFormButton">Cerrar Formulario</button>
             <p id="error-message"></p>
             <p id="success-message"></p>
         </form>
     </div>
-
     <script src="Ejercicio_4.js"></script>
 </body>
 

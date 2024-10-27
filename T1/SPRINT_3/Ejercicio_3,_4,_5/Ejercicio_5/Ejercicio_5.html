@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gestión de Parties</title>
+    <link rel="stylesheet" href="Ejercicio_5.css">
+</head>
+
+<body>
+    <header>
+        <h1>Gestión Avanzada de Parties</h1>
+    </header>
+
+    <!-- Formulario para buscar una Party -->
+    <section class="search-section">
+        <form id="searchPartyForm">
+            <div class="form-group">
+                <label for="party_id">Party ID:</label>
+                <input type="text" id="party_id" name="party_id" required placeholder="Introduce el ID de la party">
+            </div>
+
+            <div class="form-group">
+                <label for="partySize">Party Size:</label>
+                <select id="partySize" name="partySize" required>
+                    <option value="3">3</option>
+                    <option value="5">5</option>
+                    <option value="8">8</option>
+                </select>
+            </div>
+
+            <button type="submit" class="btn">Buscar Party</button>
+        </form>
+    </section>
+
+    <!-- Contenedor para mostrar la Party encontrada -->
+    <section id="partyList"></section>
+
+    <!-- Mensaje de estado -->
+    <div id="message"></div>
+
+    <!-- Modal para añadir miembros -->
+    <div id="addMemberModal" class="modal">
+        <div class="modal-content">
+            <span id="closeModal" class="close">&times;</span>
+            <form id="addMemberForm">
+                <h2>Añadir Miembro</h2>
+                <div class="form-group">
+                    <label for="user_id">User ID:</label>
+                    <input type="text" id="user_id" required placeholder="Introduce el ID del usuario">
+                </div>
+
+                <div class="form-group">
+                    <label for="role">Role:</label>
+                    <select id="role" required>
+                        <option value="TANK">TANK</option>
+                        <option value="HEALER">HEALER</option>
+                        <option value="DAMAGE">DAMAGE</option>
+                        <option value="SUPPORT">SUPPORT</option>
+                    </select>
+                </div>
+
+                <button type="submit" class="btn">Añadir Miembro</button>
+            </form>
+        </div>
+    </div>
+
+    <script src="Ejercicio_5.js"></script>
+</body>
+
+</html>
