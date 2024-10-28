@@ -283,7 +283,7 @@ Todo el contenido del JavaScript ha sido desarrollado con la asistencia de ChatG
 
 ---
 
-# Ejercicio: Gestión de Party
+# Ejercicio 5: Gestión de Party
 
 ## Análisis
 
@@ -465,7 +465,7 @@ Podría meter ahí a este miembro?:
         "notify_dkp": 1,
         "notify_email": 1
     }
-    - Vale pues estoy intentando añadir a :
+- Vale pues estoy intentando añadir a :
 
  {
         "user_id": "010",
