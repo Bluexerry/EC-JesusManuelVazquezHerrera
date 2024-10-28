@@ -18,6 +18,9 @@ async function searchParty(party_id, partySize) {
 
         const party = await response.json();
 
+        // Debugging: Asegúrate de que la party tenga miembros
+        console.log("Party recibida:", party);
+
         if (!party || !party.party_id) {
             throw new Error("No se encontraron parties con los parámetros especificados");
         }
@@ -36,21 +39,21 @@ async function searchParty(party_id, partySize) {
             <p>Item Level Cap: ${party.ilvl_cap}</p>
         `;
 
-        // Verificar si existe la propiedad members y es un array
-        if (Array.isArray(party.members)) {
-            partyDiv.innerHTML += `<p>Número de miembros: ${party.members.length}</p>`;
+        // Verificar si existe la propiedad members
+        const members = Array.isArray(party.members) ? party.members : [];
 
-            // Agregar cada miembro a la visualización
-            party.members.forEach(member => {
-                partyDiv.innerHTML += `
-                    <div>
-                        <p>Miembro: ${member.user_id} (${member.party_role})</p>
-                        <button onclick="removeMember(${party.party_id}, '${member.user_id}', ${partySize})">Remover</button>
-                    </div>
-                `;
-            });
-        } else {
-            partyDiv.innerHTML += `<p>No hay miembros en esta party</p>`;
+        // Mostrar los slots de miembros basados en el tamaño de la party
+        partyDiv.innerHTML += `<p>Número de miembros: ${members.length}/${partySize}</p>`;
+
+        for (let i = 0; i < partySize; i++) {
+            const member = members[i] || { user_id: null, party_role: null }; // Rellenar con valores vacíos si no hay miembro
+
+            partyDiv.innerHTML += `
+                <div>
+                    <p>Miembro ${i + 1}: ${member.user_id ? member.user_id : "Vacío"} (${member.party_role ? member.party_role : "Sin rol"})</p>
+                    ${member.user_id ? `<button onclick="removeMember(${party.party_id}, '${member.user_id}', ${partySize})">Remover</button>` : ""}
+                </div>
+            `;
         }
 
         // Botón para añadir miembro
@@ -74,7 +77,6 @@ function showMessage(message, type) {
 }
 
 // Abrir el modal para añadir miembro
-// Abrir el modal para añadir miembro
 function openAddMemberModal(party_id, partySize) {
     const modal = document.getElementById("addMemberModal");
     const form = document.getElementById("addMemberForm");
@@ -85,7 +87,6 @@ function openAddMemberModal(party_id, partySize) {
         const role = document.getElementById("role").value;
 
         try {
-            // Llamar al endpoint para añadir miembro
             const response = await fetch(`${apiUrl}/partyfinder/${partySize}/${party_id}/addMember`, {
                 method: "POST",
                 headers: {
@@ -95,17 +96,14 @@ function openAddMemberModal(party_id, partySize) {
             });
 
             if (response.ok) {
-                // Si la solicitud es exitosa, actualizar la lista de parties
-                searchParty(party_id, partySize);
+                searchParty(party_id, partySize); // Actualizar la lista de parties
                 showMessage("Miembro añadido correctamente", "success");
                 modal.style.display = "none"; // Cerrar modal
                 form.reset();
             } else {
-                // Manejar error devuelto por la API
                 const errorData = await response.json();
-                // Verificar si el error se debe a falta de espacio o rol
-                if (errorData.message.includes("La party está llena") || errorData.message.includes("no hay posiciones disponibles")) {
-                    showMessage("No se puede añadir el miembro: La party está llena o no hay posiciones disponibles para el rol especificado.", "error");
+                if (errorData.message.includes("La party está llena")) {
+                    showMessage("No se puede añadir el miembro: La party está llena o no hay posiciones disponibles.", "error");
                 } else {
                     showMessage(`Error al añadir miembro: ${errorData.message}`, "error");
                 }
@@ -118,7 +116,6 @@ function openAddMemberModal(party_id, partySize) {
 
     modal.style.display = "block";
 }
-
 
 // Cerrar el modal
 document.getElementById("closeModal").addEventListener("click", () => {
