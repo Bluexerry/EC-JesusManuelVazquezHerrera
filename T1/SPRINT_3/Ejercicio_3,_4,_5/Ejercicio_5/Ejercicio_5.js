@@ -13,7 +13,6 @@ async function searchParty(party_id, partySize) {
         });
 
         if (!response.ok) {
-            // Si la respuesta no es exitosa, lanzar un error para ser capturado
             throw new Error(`Error en la solicitud: ${response.status} ${response.statusText}`);
         }
 
@@ -46,7 +45,7 @@ async function searchParty(party_id, partySize) {
                 partyDiv.innerHTML += `
                     <div>
                         <p>Miembro: ${member.user_id} (${member.party_role})</p>
-                        <button onclick="removeMember(${party.party_id}, '${member.user_id}', ${partySize}')">Remover</button>
+                        <button onclick="removeMember(${party.party_id}, '${member.user_id}', ${partySize})">Remover</button>
                     </div>
                 `;
             });
@@ -74,6 +73,7 @@ function showMessage(message, type) {
     messageDiv.style.color = type === "error" ? "red" : "green";
 }
 
+// Abrir el modal para añadir miembro
 // Abrir el modal para añadir miembro
 function openAddMemberModal(party_id, partySize) {
     const modal = document.getElementById("addMemberModal");
@@ -103,7 +103,12 @@ function openAddMemberModal(party_id, partySize) {
             } else {
                 // Manejar error devuelto por la API
                 const errorData = await response.json();
-                showMessage(`Error al añadir miembro: ${errorData.message}`, "error");
+                // Verificar si el error se debe a falta de espacio o rol
+                if (errorData.message.includes("La party está llena") || errorData.message.includes("no hay posiciones disponibles")) {
+                    showMessage("No se puede añadir el miembro: La party está llena o no hay posiciones disponibles para el rol especificado.", "error");
+                } else {
+                    showMessage(`Error al añadir miembro: ${errorData.message}`, "error");
+                }
             }
         } catch (error) {
             console.error("Error al añadir miembro:", error);
@@ -113,6 +118,7 @@ function openAddMemberModal(party_id, partySize) {
 
     modal.style.display = "block";
 }
+
 
 // Cerrar el modal
 document.getElementById("closeModal").addEventListener("click", () => {
