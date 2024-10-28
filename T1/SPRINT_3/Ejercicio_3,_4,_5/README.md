@@ -151,7 +151,7 @@ notify_email (boolean)
 
 ---
 
-# Ejercicio 4: Gestión de Parties
+# Ejercicio 4: Creacion de partys
 
 ## Análisis
 
@@ -283,8 +283,7 @@ Todo el contenido del JavaScript ha sido desarrollado con la asistencia de ChatG
 
 ---
 
-# Ejercicio 5: Gestión de Party
-
+# Ejercicio 5: Gestión de Partys y miembros
 ## Análisis
 
 **Descripción del ejercicio:**  
