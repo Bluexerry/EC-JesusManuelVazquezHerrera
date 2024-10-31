@@ -259,6 +259,16 @@ Este ejercicio consiste en implementar un sistema para gestionar la creación de
 
 ---
 
+### Prueba EXTRA: Verificacion de si existe o no el user_id
+
+- **Pasos:**
+  Esta prueba es de ultima hora y sirve para verificar que si creo una party cuando un usuario no exite (es decir, un user_id no existe) no podra crear una nueva party. En el siguiente GIF intento crear una party con un user_id 012, el cual mediante postman muestro que no es posible debido a que no existe y tambien mediante el propio ejercicio. Luego, lo intento con un user_id 011, el cual si existe, y si me lo permite (todo esto teniendo en cuenta que tuve que cerrar el ejecutable varias veces por el problema de grabacion que le comenté el dia 30).
+  
+- **GIF:**
+  ![Comportamiento del Formulario](./Pruebas/Prueba_4-Extra.gif)
+
+---
+
 **Bibliografía general usada para hacer el ejercicio:**  
 Todo el contenido del JavaScript ha sido desarrollado con la asistencia de ChatGPT.
 
@@ -284,6 +294,7 @@ Todo el contenido del JavaScript ha sido desarrollado con la asistencia de ChatG
 ---
 
 # Ejercicio 5: Gestión de Partys y miembros
+
 ## Análisis
 
 **Descripción del ejercicio:**  
@@ -464,6 +475,7 @@ Podría meter ahí a este miembro?:
         "notify_dkp": 1,
         "notify_email": 1
     }
+
 - Vale pues estoy intentando añadir a :
 
  {

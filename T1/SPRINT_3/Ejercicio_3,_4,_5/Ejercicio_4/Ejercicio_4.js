@@ -52,6 +52,21 @@ document.addEventListener("DOMContentLoaded", () => {
         }
 
         try {
+            // Verificar si el creator_id existe en la base de datos
+            const membersResponse = await fetch("http://localhost:3000/guildmembers");
+            if (!membersResponse.ok) {
+                throw new Error("Error al obtener los miembros");
+            }
+            const members = await membersResponse.json();
+            const memberExists = members.some(member => member.user_id === creator_id);
+
+            if (!memberExists) {
+                errorMessage.textContent = "Error: El Creator ID no corresponde a un miembro existente.";
+                successMessage.textContent = "";
+                return;
+            }
+
+            // Crear la party si el creator_id es válido
             const response = await fetch(`http://localhost:3000/partyfinder/${partySize}`, {
                 method: "POST",
                 headers: {
