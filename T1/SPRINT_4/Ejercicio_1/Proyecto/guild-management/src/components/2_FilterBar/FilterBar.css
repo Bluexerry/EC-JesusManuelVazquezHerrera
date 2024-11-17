@@ -1,0 +1,23 @@
+/* FilterBar.css */
+
+.filter-container {
+    padding: 20px;
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    margin-bottom: 20px;
+}
+
+.filter-group,
+.sort-group {
+    margin-bottom: 10px;
+}
+
+.filter-group label,
+.sort-group label {
+    margin-right: 10px;
+}
+
+.filter-group select,
+.filter-group input {
+    margin-right: 10px;
+}
