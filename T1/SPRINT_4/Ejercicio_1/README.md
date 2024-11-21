@@ -279,3 +279,64 @@ Todo el contenido del JavaScript ha sido desarrollado con la asistencia de ChatG
 - **src/components/3_SortControls/SortControls.jsx:** Componente para ordenar la lista de miembros por diferentes criterios.
 - **src/components/2_FilterBar/FilterBar.jsx:** Componente para filtrar la lista de miembros por diferentes criterios.
 - **src/services/members/members_api.js:** Archivo que contiene las funciones para interactuar con la API.
+
+```
+.gitignore
+package.json
+public/
+├── index.html
+├── manifest.json
+└── robots.txt
+README.md
+src/
+├── App.css
+├── App.js
+├── App.test.js
+├── components/
+│   ├── 1_GuildMemberManagement/
+│   │   ├── GuildMemberManagement.css
+│   │   └── GuildMemberManagement.jsx
+│   ├── 2_FilterBar/
+│   │   ├── FilterBar.css
+│   │   └── FilterBar.jsx
+│   ├── 3_SortControls/
+│   │   ├── SortControls.css
+│   │   └── SortControls.jsx
+│   ├── 4_MemberList/
+│   │   ├── MemberList.css
+│   │   └── MemberList.jsx
+│   ├── 5_MemberItem/
+│   │   ├── MemberItem.css
+│   │   └── MemberItem.jsx
+│   ├── 6_BulkActions/
+│   │   ├── BulkActions.css
+│   │   └── BulkActions.jsx
+│   ├── 7_MemberDetailsModal/
+│   │   ├── MemberDetailsModal.css
+│   │   └── MemberDetailsModal.jsx
+│   ├── 8_MemberEditModal/
+│   │   ├── MemberEditModal.css
+│   │   └── MemberEditModal.jsx
+│   ├── 9_Pagination/
+│   │   ├── Pagination.css
+│   │   └── Pagination.jsx
+│   ├── 10_ConfirmationDialog/
+│   │   ├── ConfirmationDialog.css
+│   │   └── ConfirmationDialog.jsx
+│   ├── 11_NotificationSystem/
+│   │   ├── NotificationSystem.css
+│   │   └── NotificationSystem.jsx
+│   └── 12_NewMemberModal/
+│       ├── NewMemberModal.css
+│       └── NewMemberModal.jsx
+├── index.css
+├── index.js
+├── reportWebVitals.js
+├── services/
+│   ├── members/
+│   │   └── members_api.js
+│   └── partyFinder/
+│       └── partyFinder_api.js
+└── setupTests.js
+```
+---
