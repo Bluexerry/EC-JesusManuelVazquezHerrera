@@ -1,0 +1,45 @@
+/* MemberItem.css */
+
+.member-item {
+    transition: background-color 0.3s ease;
+}
+
+.member-item:hover {
+    background-color: #f1f1f1;
+}
+
+.member-item td {
+    padding: 8px;
+    border: 1px solid #ddd;
+    text-align: left;
+}
+
+.member-item button {
+    padding: 5px 10px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-right: 5px;
+}
+
+.member-item button:hover {
+    opacity: 0.8;
+}
+
+.member-item button.edit {
+    background-color: #4CAF50;
+    color: white;
+}
+
+.member-item button.delete {
+    background-color: #f44336;
+    color: white;
+}
+
+.member-item button.edit:hover {
+    background-color: #45a049;
+}
+
+.member-item button.delete:hover {
+    background-color: #d32f2f;
+}
