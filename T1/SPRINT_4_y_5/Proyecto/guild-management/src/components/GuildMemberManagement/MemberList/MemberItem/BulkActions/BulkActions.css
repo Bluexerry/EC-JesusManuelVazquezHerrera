@@ -1,0 +1,67 @@
+/* BulkActions.css */
+.bulk-actions {
+    background-color: #f9f9f9;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    margin-top: 20px;
+}
+
+.bulk-info p {
+    margin: 5px 0;
+    font-size: 14px;
+    color: #555;
+}
+
+.bulk-actions-buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    margin-top: 20px;
+}
+
+.bulk-action {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.bulk-action textarea {
+    width: 100%;
+    height: 100px;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 14px;
+}
+
+.bulk-action select {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 14px;
+}
+
+.bulk-action button {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    border-radius: 5px;
+    font-size: 14px;
+    transition: background-color 0.3s ease;
+}
+
+.bulk-action button:hover {
+    background-color: #0056b3;
+}
+
+.bulk-action .delete-button {
+    background-color: #dc3545;
+}
+
+.bulk-action .delete-button:hover {
+    background-color: #c82333;
+}

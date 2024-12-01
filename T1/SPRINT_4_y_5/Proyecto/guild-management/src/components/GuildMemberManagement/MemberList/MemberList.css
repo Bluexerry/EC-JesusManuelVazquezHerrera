@@ -1,0 +1,48 @@
+/* MemberList.css */
+.pagination-controls {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    margin-bottom: 10px;
+    padding-right: 20px;
+    gap: 10px; /* Add some space between elements */
+}
+
+.pagination-controls label {
+    display: flex;
+    align-items: center;
+    font-size: 14px;
+    color: #555;
+    white-space: nowrap;
+}
+
+.pagination-controls select {
+    margin-left: 5px;
+    padding: 5px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 14px;
+    background-color: #fff;
+    color: #333;
+    transition: border-color 0.3s ease;
+}
+
+.pagination-controls select:hover {
+    border-color: #007bff;
+}
+
+.member-list {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.member-list th,
+.member-list td {
+    padding: 10px;
+    border: 1px solid #ddd;
+    text-align: left;
+}
+
+.member-list th {
+    background-color: #f1f1f1;
+}

@@ -1,0 +1,53 @@
+/* MemberItem.css */
+.member-item {
+    background-color: #f9f9f9;
+    border-bottom: 1px solid #ddd;
+    transition: background-color 0.3s ease;
+}
+
+.member-item:hover {
+    background-color: #f1f1f1;
+}
+
+.member-item td {
+    padding: 12px 15px;
+    text-align: left;
+    font-size: 14px;
+    color: #333;
+}
+
+.member-item .username {
+    cursor: pointer;
+    color: #007bff;
+    font-weight: bold;
+}
+
+.member-item .username:hover {
+    text-decoration: underline;
+}
+
+.member-item .edit,
+.member-item .delete {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 8px 12px;
+    cursor: pointer;
+    border-radius: 5px;
+    margin-right: 5px;
+    font-size: 14px;
+    transition: background-color 0.3s ease;
+}
+
+.member-item .delete {
+    background-color: #dc3545;
+}
+
+.member-item .edit:hover,
+.member-item .delete:hover {
+    background-color: #0056b3;
+}
+
+.member-item .delete:hover {
+    background-color: #c82333;
+}

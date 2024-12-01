@@ -1,0 +1,37 @@
+/* AppHeader.css */
+.App-header {
+    background-color: #007bff;
+    padding: 20px;
+    color: white;
+    display: flex;
+    justify-content: center; /* Center the links */
+    align-items: center;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.App-header a {
+    color: white;
+    text-decoration: none;
+    font-size: 20px;
+    transition: color 0.3s ease;
+    margin: 0 200px; /* Adjust margin to space out the links */
+}
+
+.App-header a:hover {
+    color: #ffdd57;
+    text-decoration: underline;
+}
+
+.App-header h1 {
+    margin: 0;
+    font-size: 24px;
+}
+
+/* Add this to ensure the main content is not overlapped by the fixed header */
+.main-content {
+    padding-top: 80px; /* Adjust this value based on the height of your header */
+}
