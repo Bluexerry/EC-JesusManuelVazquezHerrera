@@ -1,38 +1,20 @@
-const PARTY_FINDER_URL = "http://localhost:3000/partyfinder";
+const BASE_URL = "http://localhost:3000/partyfinder";
 
 /**
  * Fetches all groups in the Party Finder.
  * @returns {Promise} List of groups.
  */
 export async function getPartyGroups() {
-    const response = await fetch(`${PARTY_FINDER_URL}`);
-    return await response.json();
-}
-
-/**
- * Searches for members in Party Finder based on specified criteria.
- * @param {Object} searchCriteria - Criteria for searching members.
- * @returns {Promise} List of members matching the search criteria.
- */
-export async function searchPartyMembers(searchCriteria) {
-    const queryString = new URLSearchParams(searchCriteria).toString();
-    const response = await fetch(`${PARTY_FINDER_URL}?${queryString}`);
-    return await response.json();
-}
-
-/**
- * Creates a new party with the specified size.
- * @param {number} partySize - The size of the party (3, 5, or 8).
- * @param {Object} partyData - Data for the new party.
- * @returns {Promise} The newly created party data.
- */
-export async function createParty(partySize, partyData) {
-    const response = await fetch(`${PARTY_FINDER_URL}/${partySize}`, {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(partyData)
-    });
-    return await response.json();
+    try {
+        const response = await fetch(`${BASE_URL}`);
+        if (!response.ok) {
+            throw new Error(`HTTP error! status: ${response.status}`);
+        }
+        return await response.json();
+    } catch (error) {
+        console.error("Failed to fetch party groups:", error);
+        return [];
+    }
 }
 
 /**
@@ -43,12 +25,20 @@ export async function createParty(partySize, partyData) {
  * @returns {Promise} Confirmation message.
  */
 export async function addPartyMember(partySize, partyId, memberData) {
-    const response = await fetch(`${PARTY_FINDER_URL}/${partySize}/${partyId}/addMember`, {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(memberData)
-    });
-    return await response.json();
+    try {
+        const response = await fetch(`${BASE_URL}/${partySize}/${partyId}/addMember`, {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify(memberData)
+        });
+        if (!response.ok) {
+            throw new Error(`HTTP error! status: ${response.status}`);
+        }
+        return await response.json();
+    } catch (error) {
+        console.error("Failed to add party member:", error);
+        return null;
+    }
 }
 
 /**
@@ -59,12 +49,20 @@ export async function addPartyMember(partySize, partyId, memberData) {
  * @returns {Promise} Confirmation message.
  */
 export async function removePartyMember(partySize, partyId, memberData) {
-    const response = await fetch(`${PARTY_FINDER_URL}/${partySize}/${partyId}/removeMember`, {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(memberData)
-    });
-    return await response.json();
+    try {
+        const response = await fetch(`${BASE_URL}/${partySize}/${partyId}/removeMember`, {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify(memberData)
+        });
+        if (!response.ok) {
+            throw new Error(`HTTP error! status: ${response.status}`);
+        }
+        return await response.json();
+    } catch (error) {
+        console.error("Failed to remove party member:", error);
+        return null;
+    }
 }
 
 /**
@@ -74,38 +72,59 @@ export async function removePartyMember(partySize, partyId, memberData) {
  * @returns {Promise} Details of the party.
  */
 export async function getPartyDetails(partySize, partyId) {
-    const response = await fetch(`${PARTY_FINDER_URL}/${partySize}/${partyId}`);
-    return await response.json();
+    try {
+        const response = await fetch(`${BASE_URL}/${partySize}/${partyId}`);
+        if (!response.ok) {
+            throw new Error(`HTTP error! status: ${response.status}`);
+        }
+        return await response.json();
+    } catch (error) {
+        console.error("Failed to fetch party details:", error);
+        return null;
+    }
 }
 
 /**
- * Deletes a specific party.
- * @param {number} partySize - The size of the party (3, 5, or 8).
- * @param {number} partyId - The ID of the party.
- * @param {Object} partyData - Data of the party to delete.
+ * Creates a new party.
+ * @param {Object} partyData - Data of the party to create.
  * @returns {Promise} Confirmation message.
  */
-export async function deleteParty(partySize, partyId, partyData) {
-    const response = await fetch(`${PARTY_FINDER_URL}/${partySize}/${partyId}`, {
-        method: 'DELETE',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(partyData)
-    });
-    return await response.json();
+export async function createParty(partyData) {
+    try {
+        const response = await fetch(`${BASE_URL}`, {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify(partyData)
+        });
+        if (!response.ok) {
+            throw new Error(`HTTP error! status: ${response.status}`);
+        }
+        return await response.json();
+    } catch (error) {
+        console.error("Failed to create party:", error);
+        return null;
+    }
 }
 
 /**
- * Updates the role of a member in a party.
- * @param {number} partySize - The size of the party (3, 5, or 8).
+ * Updates an existing party.
  * @param {number} partyId - The ID of the party.
- * @param {Object} roleData - Data for updating the member's role.
+ * @param {Object} partyData - Updated data of the party.
  * @returns {Promise} Confirmation message.
  */
-export async function updatePartyMemberRole(partySize, partyId, roleData) {
-    const response = await fetch(`${PARTY_FINDER_URL}/update-role/${partySize}/${partyId}`, {
-        method: 'PUT',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(roleData)
-    });
-    return await response.json();
+export async function updateParty(partyId, partyData) {
+    try {
+        const response = await fetch(`${BASE_URL}/${partyId}`, {
+            method: 'PUT',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify(partyData)
+        });
+        if (!response.ok) {
+            throw new Error(`HTTP error! status: ${response.status}`);
+        }
+        return await response.json();
+    } catch (error) {
+        console.error("Failed to update party:", error);
+        return null;
+    }
 }

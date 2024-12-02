@@ -1,0 +1,59 @@
+.party-item {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    padding: 10px;
+    margin-bottom: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.party-item:hover {
+    background-color: #f1f1f1;
+}
+
+.party-item p {
+    margin: 5px 0;
+}
+
+.party-item ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.party-item li {
+    margin: 5px 0;
+}
+
+.party-item-buttons {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 10px;
+}
+
+.party-item-buttons button {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    cursor: pointer;
+    border-radius: 5px;
+    font-size: 14px;
+    transition: background-color 0.3s ease;
+}
+
+.party-item-buttons button:hover {
+    background-color: #0056b3;
+}
+
+.party-item-buttons button:last-child {
+    background-color: #d9534f;
+}
+
+.party-item-buttons button:last-child:hover {
+    background-color: #c9302c;
+}
+
+.party-item .fas {
+    margin-left: 5px;
+}

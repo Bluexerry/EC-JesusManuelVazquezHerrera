@@ -1,0 +1,86 @@
+.party-form {
+    font-family: Arial, sans-serif;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.party-form h2 {
+    text-align: center;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+.party-form form {
+    display: flex;
+    flex-direction: column;
+}
+
+.party-form label {
+    margin-bottom: 10px;
+    font-weight: bold;
+    color: #555;
+}
+
+.party-form select,
+.party-form input[type="number"],
+.party-form input[type="text"] {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    margin-top: 5px;
+    font-size: 14px;
+}
+
+.party-form .roles {
+    margin-top: 20px;
+}
+
+.party-form .roles h3 {
+    color: #555;
+    margin-bottom: 10px;
+}
+
+.party-form .roles > div {
+    margin-bottom: 20px;
+}
+
+.party-form .error {
+    color: #dc3545;
+    font-size: 12px;
+    margin-top: 5px;
+}
+
+.party-form .notification {
+    margin-top: 20px;
+    padding: 10px;
+    border-radius: 4px;
+    font-size: 14px;
+}
+
+.party-form .notification.success {
+    background-color: #d4edda;
+    color: #155724;
+}
+
+.party-form .notification.error {
+    background-color: #f8d7da;
+    color: #721c24;
+}
+
+.party-form button {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    border-radius: 5px;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+}
+
+.party-form button:hover {
+    background-color: #0056b3;
+}

@@ -1,0 +1,29 @@
+.party-role-assignment {
+    margin-top: 20px;
+}
+
+.party-role-assignment h3 {
+    color: #555;
+    margin-bottom: 10px;
+}
+
+.role-assignment {
+    margin-bottom: 20px;
+}
+
+.role-assignment label {
+    display: block;
+    margin-bottom: 10px;
+    font-weight: bold;
+    color: #555;
+}
+
+.role-assignment select,
+.role-assignment input[type="number"] {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    margin-top: 5px;
+    font-size: 14px;
+}
