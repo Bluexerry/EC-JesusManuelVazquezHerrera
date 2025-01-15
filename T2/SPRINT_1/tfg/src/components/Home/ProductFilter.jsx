@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import '../../styles/home.css';
 
 const ProductFilter = ({ onFilter }) => {
   const [category, setCategory] = useState('');

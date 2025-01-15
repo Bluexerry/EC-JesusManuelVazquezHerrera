@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import '../../styles/product.css';
 
 const CartPreview = ({ cartItems }) => {
   const [isOpen, setIsOpen] = useState(false);
