@@ -8,7 +8,16 @@ import ProductFilter from './components/Home/ProductFilter.jsx';
 import ProductList from './components/Home/ProductList.jsx';
 import CartPreview from './components/Home/CartPreview.jsx';
 import Footer from './components/Layout/Footer.jsx';
+import NotificationSystem from './components/Shared/NotificationSystem.jsx';
 import { fetchProducts } from './services/products_API.js'; // Importa la función fetchProducts
+import {
+  BrowserRouter as Router,
+  Routes,
+  Route,
+} from 'react-router-dom';
+import LoginForm from './components/Auth/LoginForm.jsx';
+import RegisterForm from './components/Auth/RegisterForm.jsx';
+import ForgotPasswordForm from './components/Auth/ForgotPasswordForm.jsx';
 
 const App = () => {
   const [products, setProducts] = useState([]);
@@ -81,25 +90,42 @@ const App = () => {
   };
 
   return (
-    <div className="App">
-      <Navbar />
-      <HeroSection />
-      <ProductFilter onFilter={handleFilter} />
-      {isLoading ? (
-        <div className="loader" aria-label="Cargando productos...">
-          {/* Spinner de carga */}
+    <NotificationSystem>
+      <Router>
+        <div className="App">
+          <Navbar />
+          <Routes>
+            <Route
+              path="/"
+              element={
+                <>
+                  <HeroSection />
+                  <ProductFilter onFilter={handleFilter} />
+                  {isLoading ? (
+                    <div className="loader" aria-label="Cargando productos...">
+                      {/* Spinner de carga */}
+                    </div>
+                  ) : (
+                    <ProductList
+                      products={filteredProducts}
+                      onAddToCart={handleAddToCart}
+                      onOpenChat={handleOpenChat}
+                      onOpenConfigurator={handleOpenConfigurator}
+                    />
+                  )}
+                  <CartPreview cartItems={cartItems} onRemoveFromCart={handleRemoveFromCart} />
+                </>
+              }
+            />
+            <Route path="/login" element={<LoginForm />} />
+            <Route path="/register" element={<RegisterForm />} />
+            <Route path="/forgot-password" element={<ForgotPasswordForm />} />
+            {/* Agrega más rutas según sea necesario */}
+          </Routes>
+          <Footer />
         </div>
-      ) : (
-        <ProductList
-          products={filteredProducts}
-          onAddToCart={handleAddToCart}
-          onOpenChat={handleOpenChat}
-          onOpenConfigurator={handleOpenConfigurator}
-        />
-      )}
-      <CartPreview cartItems={cartItems} onRemoveFromCart={handleRemoveFromCart} />
-      <Footer />
-    </div>
+      </Router>
+    </NotificationSystem>
   );
 };
 
