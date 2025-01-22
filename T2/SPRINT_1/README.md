@@ -83,3 +83,15 @@ Este proyecto es una tienda en línea enfocada en la venta de videojuegos de seg
   3. Probar con un correo no registrado y verificar el mensaje de error.
 - **GIF**:  
   ![Prueba - 4](./Recursos/Ejercicio%202/2.4.gif)
+
+## Diagramas de flujo
+
+### Arquitectura de la API REST
+Este diagrama describe la estructura y organización general de la API REST utilizada en el proyecto.
+
+![Arquitectura de la API REST](./Recursos//General//Diagrama%20sin%20título.drawio.png)
+
+### Flujo del Proceso de Usuario
+Representa las interacciones y decisiones principales que realiza un usuario en el sistema.
+
+![Flujo del Proceso de Usuario](./Recursos/General/Diagrama%20de%20flujo.draw.drawio.png)
