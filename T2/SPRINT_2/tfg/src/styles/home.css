@@ -1,0 +1,331 @@
+/* Hero Section Styles */
+.hero-section {
+    /*   background-image: url('/assets/images/hero-background.jpg');*/
+ 
+    background-size: cover;
+    background-position: center;
+    color: #fff;
+    padding: 120px 20px;
+    text-align: center;
+    position: relative;
+  }
+  
+  .hero-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(44, 62, 80, 0.6);
+  }
+  
+  .hero-section > * {
+    position: relative;
+    z-index: 1;
+  }
+  
+  .hero-section h1 {
+    font-size: 3rem;
+    margin-bottom: 20px;
+  }
+  
+  .hero-section p {
+    font-size: 1.3rem;
+    margin-bottom: 40px;
+  }
+  
+  .hero-section button {
+    padding: 12px 30px;
+    background-color: var(--secondary-color);
+    border: none;
+    color: #fff;
+    font-size: 1.1rem;
+    border-radius: 30px;
+    cursor: pointer;
+    transition: background-color var(--transition-speed);
+  }
+  
+  .hero-section button:hover {
+    background-color: #1abc9c;
+  }
+  
+  /* General Product List Styles */
+  .product-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 25px;
+    padding: 40px 20px;
+  }
+  
+  .product-list p {
+    text-align: center;
+    width: 100%;
+    font-size: 1.3rem;
+  }
+  
+  /* Product Filter Styles */
+  .product-filter {
+    background-color: #ffffff;
+    padding: 25px 30px;
+    margin: 30px auto;
+    max-width: 900px;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  }
+  
+  .product-filter h3 {
+    margin-bottom: 20px;
+    font-size: 1.5rem;
+    color: var(--text-color);
+  }
+  
+  .filter-group {
+    margin-bottom: 20px;
+  }
+  
+  .filter-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 500;
+    color: var(--text-color);
+  }
+  
+  .filter-group select,
+  .filter-group input[type='range'] {
+    width: 100%;
+    padding: 10px 12px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    outline: none;
+    transition: border-color var(--transition-speed);
+  }
+  
+  .filter-group select:focus,
+  .filter-group input[type='range']:focus {
+    border-color: var(--primary-color);
+  }
+  
+  .product-filter button {
+    width: 100%;
+    padding: 12px;
+    background-color: var(--primary-color);
+    border: none;
+    color: #fff;
+    font-size: 1rem;
+    border-radius: 25px;
+    cursor: pointer;
+    transition: background-color var(--transition-speed);
+  }
+  
+  .product-filter button:hover {
+    background-color: var(--button-hover);
+  }
+
+/* Notification System Styles */
+
+.notification-container {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  z-index: 1000;
+}
+
+.notification {
+  display: flex;
+  align-items: center;
+  padding: 15px 20px;
+  border-radius: 8px;
+  font-family: 'Roboto', sans-serif;
+  font-size: 14px;
+  font-weight: 500;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  animation: slideIn 0.5s ease-out, fadeOut 0.5s ease-in 2.5s forwards;
+  color: #ffffff; 
+  background-color: #333; 
+  opacity: 1;
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.notification.success {
+  background-color: #28a745; 
+}
+
+.notification.error {
+  background-color: #e74c3c; 
+}
+
+.notification.info {
+  background-color: #3498db; 
+}
+
+.notification .icon {
+  font-size: 18px;
+  margin-right: 15px;
+  color: #ffffff;
+}
+
+
+.notification .message {
+  flex-grow: 1;
+  line-height: 1.4;
+  color: #ffffff; 
+  word-wrap: break-word; 
+}
+
+
+.notification .close-btn {
+  background: none;
+  border: none;
+  color: #ffffff;
+  font-size: 16px;
+  cursor: pointer;
+  transition: color 0.3s ease;
+}
+
+.notification .close-btn:hover {
+  color: #f0f0f0;
+}
+
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateX(100%);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes fadeOut {
+  to {
+    opacity: 0;
+    transform: translateX(20%);
+  }
+}
+
+.notification:focus-within {
+  outline: 2px solid #fff;
+  outline-offset: 2px;
+}
+
+/* Validation Styles */
+
+
+/* LoginForm Styles */
+.auth-container {
+  max-width: 400px;
+  margin: 50px auto;
+  padding: 20px;
+  background-color: #f9f9f9;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  font-family: 'Roboto', sans-serif;
+  text-align: center;
+}
+
+.auth-container h2 {
+  margin-bottom: 20px;
+  font-size: 24px;
+  color: #333;
+}
+
+.form-group {
+  margin-bottom: 15px;
+  text-align: left;
+}
+
+.form-group label {
+  display: block;
+  font-size: 14px;
+  font-weight: bold;
+  color: #555;
+  margin-bottom: 5px;
+}
+
+.form-group input[type="email"],
+.form-group input[type="password"],
+.form-group input[type="text"] {
+  width: 90%;
+  max-width: 300px;
+  padding: 10px;
+  font-size: 14px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  transition: border-color 0.3s ease;
+  margin: 0 auto;
+  display: block;
+}
+
+.form-group input:focus {
+  border-color: #007bff;
+  outline: none;
+  box-shadow: 0 0 5px rgba(0, 123, 255, 0.3);
+}
+
+.form-group span.error {
+  display: block;
+  margin-top: 5px;
+  color: #e74c3c;
+  font-size: 12px;
+  text-align: center;
+}
+
+button[type="submit"] {
+  width: 90%;
+  max-width: 300px;
+  padding: 12px;
+  font-size: 16px;
+  font-weight: bold;
+  color: #fff;
+  background-color: #007bff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  margin: 10px auto;
+  display: block;
+}
+
+button[type="submit"]:hover {
+  background-color: #0056b3;
+}
+
+.remember-me {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 10px;
+}
+
+.remember-me input {
+  margin-right: 5px;
+}
+
+/* ForgotPasswordForm Styles */
+.auth-container h2 {
+  font-size: 24px;
+  color: #444;
+}
+
+button[type="submit"] {
+  background-color: #28a745;
+}
+
+button[type="submit"]:hover {
+  background-color: #218838;
+}
+
+/* RegisterForm Styles */
+button[type="submit"] {
+  background-color: #17a2b8;
+}
+
+button[type="submit"]:hover {
+  background-color: #138496;
+}
