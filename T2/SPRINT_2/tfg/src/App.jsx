@@ -1,7 +1,5 @@
-// src/App.jsx
 import React, { useState, useEffect } from 'react';
-import './App.css';
-import './styles/product.css'; // Importa el CSS correcto
+import './styles/product.css';
 import Navbar from './components/Layout/Navbar.jsx';
 import HeroSection from './components/Home/HeroSection.jsx';
 import ProductFilter from './components/Home/ProductFilter.jsx';
@@ -9,21 +7,24 @@ import ProductList from './components/Home/ProductList.jsx';
 import CartPreview from './components/Home/CartPreview.jsx';
 import Footer from './components/Layout/Footer.jsx';
 import NotificationSystem from './components/Shared/NotificationSystem.jsx';
-import { fetchProducts } from './services/products_API.js'; // Importa la función fetchProducts
-import {
-  BrowserRouter as Router,
-  Routes,
-  Route,
-} from 'react-router-dom';
+import { fetchProducts } from './services/products_API.js';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import LoginForm from './components/Auth/LoginForm.jsx';
 import RegisterForm from './components/Auth/RegisterForm.jsx';
 import ForgotPasswordForm from './components/Auth/ForgotPasswordForm.jsx';
+import ProductComparator from './components/Home/ProductComparator.jsx';
+import VotingSystem from './components/Home/VotingsSystem.jsx';
+import ProductConfigurator from './components/Home/ProductConfigurator.jsx';
+import WeatherSearch from './components/Weather/WeatherSearch.jsx';
+
 
 const App = () => {
   const [products, setProducts] = useState([]);
   const [filteredProducts, setFilteredProducts] = useState([]);
   const [cartItems, setCartItems] = useState([]);
-  const [isLoading, setIsLoading] = useState(true); // Estado para indicar la carga
+  const [isLoading, setIsLoading] = useState(true);
+  // Estado para almacenar el producto activo a configurar
+  const [activeConfiguratorProduct, setActiveConfiguratorProduct] = useState(null);
 
   useEffect(() => {
     const getProducts = async () => {
@@ -37,38 +38,36 @@ const App = () => {
         setIsLoading(false);
       }
     };
-
     getProducts();
   }, []);
 
   const handleFilter = (filters) => {
     let updatedProducts = [...products];
-
     if (filters.category) {
       updatedProducts = updatedProducts.filter(
         (product) => product.category === filters.category
       );
     }
-
     if (filters.brand) {
       updatedProducts = updatedProducts.filter(
         (product) => product.brand === filters.brand
       );
     }
-
     if (filters.rating) {
       updatedProducts = updatedProducts.filter(
         (product) => product.rating >= filters.rating
       );
     }
-
     if (filters.priceRange) {
       updatedProducts = updatedProducts.filter(
         (product) => product.price <= filters.priceRange[1]
       );
     }
-
     setFilteredProducts(updatedProducts);
+  };
+
+  const handleConfigure = (configuredProducts) => {
+    setFilteredProducts(configuredProducts);
   };
 
   const handleAddToCart = (product) => {
@@ -76,17 +75,18 @@ const App = () => {
   };
 
   const handleRemoveFromCart = (productId) => {
-    setCartItems((prevItems) => prevItems.filter((item) => item.id !== productId));
+    setCartItems((prevItems) =>
+      prevItems.filter((item) => item.id !== productId)
+    );
   };
 
   const handleOpenChat = (product) => {
-    // Implementa la lógica para abrir el chat
     alert(`Abrir chat para ${product.name}`);
   };
 
+  // Al hacer clic en "Abrir Configurador" se asigna el producto activo para configurar
   const handleOpenConfigurator = (product) => {
-    // Implementa la lógica para abrir el configurador
-    alert(`Abrir configurador para ${product.name}`);
+    setActiveConfiguratorProduct(product);
   };
 
   return (
@@ -106,21 +106,42 @@ const App = () => {
                       {/* Spinner de carga */}
                     </div>
                   ) : (
-                    <ProductList
-                      products={filteredProducts}
-                      onAddToCart={handleAddToCart}
-                      onOpenChat={handleOpenChat}
-                      onOpenConfigurator={handleOpenConfigurator}
-                    />
+                    <>
+                      <ProductList
+                        products={filteredProducts}
+                        onAddToCart={handleAddToCart}
+                        onOpenChat={handleOpenChat}
+                        onOpenConfigurator={handleOpenConfigurator}
+                      />
+                      <div className="interactive-container">
+                        <div className="interactive-item">
+                          <ProductComparator products={filteredProducts} />
+                        </div>
+                        <div className="interactive-item">
+                          <VotingSystem products={filteredProducts} />
+                        </div>
+                        <div className="interactive-item">
+                          <ProductConfigurator
+                            products={products}
+                            activeProduct={activeConfiguratorProduct}
+                            setActiveProduct={setActiveConfiguratorProduct}
+                            onConfigure={handleConfigure}
+                          />
+                        </div>
+                      </div>
+                    </>
                   )}
-                  <CartPreview cartItems={cartItems} onRemoveFromCart={handleRemoveFromCart} />
+                  <CartPreview
+                    cartItems={cartItems}
+                    onRemoveFromCart={handleRemoveFromCart}
+                  />
                 </>
               }
             />
             <Route path="/login" element={<LoginForm />} />
             <Route path="/register" element={<RegisterForm />} />
             <Route path="/forgot-password" element={<ForgotPasswordForm />} />
-            {/* Agrega más rutas según sea necesario */}
+            <Route path="/weather" element={<WeatherSearch />} />
           </Routes>
           <Footer />
         </div>
