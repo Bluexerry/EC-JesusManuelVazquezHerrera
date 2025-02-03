@@ -88,7 +88,7 @@ const WeatherSearch = () => {
         }
     };
 
-    // useEffect para petición inicial con la provincia por defecto
+    // Petición inicial con la provincia por defecto
     useEffect(() => {
         fetchWeather(selectedProvince);
     }, []);
@@ -125,7 +125,7 @@ const WeatherSearch = () => {
             ) : (
                 weather && (
                     <div className="weather-result">
-                        <pre>{weather}</pre> {/* Mostrar texto plano */}
+                        <pre>{weather}</pre>
                     </div>
                 )
             )}

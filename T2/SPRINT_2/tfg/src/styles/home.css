@@ -737,3 +737,53 @@ button[type="submit"]:hover {
   font-size: 0.9rem;
   color: #555;
 }
+
+.weather-search {
+  max-width: 600px;
+  margin: 40px auto;
+  padding: 20px;
+  background-color: #f7f9fc;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  text-align: center;
+}
+
+.weather-search h2 {
+  margin-bottom: 20px;
+  color: #007bff;
+  font-size: 1.75rem;
+}
+
+.loader {
+  border: 8px solid #f3f3f3;
+  border-top: 8px solid #007bff;
+  border-radius: 50%;
+  width: 60px;
+  height: 60px;
+  animation: spin 1s linear infinite;
+  margin: 30px auto;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+.weather-result {
+  background-color: #ffffff;
+  padding: 15px;
+  border-radius: 4px;
+  border: 1px solid #ced4da;
+  margin-top: 20px;
+  text-align: left;
+  overflow-x: auto;
+}
+
+.error {
+  color: #e74c3c;
+  background-color: #fcebea;
+  padding: 10px;
+  border-radius: 4px;
+  margin-top: 20px;
+}
