@@ -766,8 +766,13 @@ button[type="submit"]:hover {
 }
 
 @keyframes spin {
-  0% { transform: rotate(0deg); }
-  100% { transform: rotate(360deg); }
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
 }
 
 .weather-result {
@@ -786,4 +791,149 @@ button[type="submit"]:hover {
   padding: 10px;
   border-radius: 4px;
   margin-top: 20px;
+}
+
+/* Estilos de tiempo avanzado*/
+/* src/styles/detailedWeather.css */
+.detailed-weather-search {
+  background-color: #eef4f9;
+  padding: 2rem;
+  border-radius: 10px;
+  max-width: 900px;
+  margin: 2rem auto;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  color: #333;
+}
+
+.detailed-weather-search h2,
+.detailed-weather-search h3,
+.detailed-weather-search h4 {
+  color: #005a9e;
+  margin-bottom: 1rem;
+  text-align: center;
+}
+
+/* Selector de municipio */
+.municipio-selector {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+.municipio-selector label {
+  font-weight: bold;
+  color: #333;
+}
+
+.municipio-selector select {
+  padding: 0.5rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 1rem;
+  background-color: #fff;
+  color: #333;
+}
+
+.municipio-selector button {
+  background-color: #0078d4;
+  color: #fff;
+  border: none;
+  padding: 0.6rem 1.2rem;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.municipio-selector button:hover {
+  background-color: #005a9e;
+}
+
+/* Estado Actual */
+.current-state {
+  border-bottom: 2px solid #ddd;
+  padding-bottom: 1rem;
+  margin-bottom: 2rem;
+}
+
+.current-info {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  background-color: #fff;
+  padding: 1rem;
+  border-radius: 6px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+
+.current-info i {
+  font-size: 50px;
+  color: #0078d4;
+}
+
+.current-info div p {
+  margin: 0.2rem 0;
+  font-size: 1.1rem;
+}
+
+/* Pronóstico */
+.forecast {
+  margin-top: 2rem;
+}
+
+.forecast-day {
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  margin-bottom: 1.5rem;
+  padding: 1rem;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+
+.forecast-day h4 {
+  text-align: center;
+  margin-bottom: 1rem;
+  color: #005a9e;
+}
+
+.forecast-intervals {
+  display: flex;
+  justify-content: space-around;
+  gap: 1rem;
+}
+
+.forecast-intervals>div {
+  text-align: center;
+}
+
+.forecast-intervals i {
+  font-size: 40px;
+  color: #0078d4;
+}
+
+.forecast-intervals p {
+  margin: 0.3rem 0;
+  font-size: 1rem;
+}
+
+/* Loader */
+.loader {
+  text-align: center;
+  padding: 2rem;
+  font-size: 1.2rem;
+  color: #0078d4;
+}
+
+/* Error Message */
+.error {
+  color: #d9534f;
+  background-color: #f2dede;
+  padding: 0.8rem;
+  border-radius: 4px;
+  text-align: center;
+  margin: 1rem auto;
+  max-width: 500px;
 }

@@ -16,6 +16,7 @@ import ProductComparator from './components/Home/ProductComparator.jsx';
 import VotingSystem from './components/Home/VotingsSystem.jsx';
 import ProductConfigurator from './components/Home/ProductConfigurator.jsx';
 import WeatherSearch from './components/Weather/WeatherSearch.jsx';
+import DetailedWeatherSearch from './components/Weather/DetailedWeatherSearch.jsx';
 
 
 const App = () => {
@@ -142,6 +143,7 @@ const App = () => {
             <Route path="/register" element={<RegisterForm />} />
             <Route path="/forgot-password" element={<ForgotPasswordForm />} />
             <Route path="/weather" element={<WeatherSearch />} />
+            <Route path="/weather/detailed" element={<DetailedWeatherSearch />} />
           </Routes>
           <Footer />
         </div>

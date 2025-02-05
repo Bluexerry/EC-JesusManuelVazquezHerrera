@@ -12,6 +12,8 @@ const Navbar = () => {
         <li><Link to="/ofertas">Ofertas</Link></li>
         <li><Link to="/contacto">Contacto</Link></li>
         <li><Link to="/weather">Tiempo</Link></li>
+        <li><Link to="/weather/detailed">Pronóstico Detallado</Link></li>
+
         <li><Link to="/login">Iniciar Sesión</Link></li>
         <li><Link to="/register">Registrarse</Link></li>
       </ul>

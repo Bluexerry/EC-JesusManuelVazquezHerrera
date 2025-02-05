@@ -83,18 +83,21 @@ El diseño sigue un esquema _responsive_ y basado en componentes. Se utilizan ho
 
 ### ✅ Prueba 1.1: Consulta de provincia y visualización de datos actuales  
 
-- Ingresar **Sevilla** en el filtro de provincia.  
-- Verificar que se muestra la temperatura, el estado del clima (lluvioso, soleado o nublado) y la velocidad del viento actual.  
-- Asegurarse de que se visualizan de manera correcta los datos meteorológicos pronosticados para al menos las siguientes 48 horas.  
-- Ingresar **Madrid** en el filtro de provincia.  
-- Verificar la correcta visualización tanto de los datos actuales como de la predicción meteorológica para las próximas 48 horas.  
+- Introducción de la ubicación en un buscador (sólo por provincia).
+- Visualización del estado actual (temperatura, condición climática y velocidad del viento).
+- Iconos dinámicos según la condición climática (soleado, nublado, lluvia, etc.).
+Ejemplo en eltiempo.es
+
 ![GIF Prueba 1.1](./Recursos/Ejercicio%201/Ejercicio1.1.gif)  
 
 ### ✅ Prueba 1.2: Cambio entre unidades de temperatura  
 
-- Cambiar de **Celsius** a **Fahrenheit** mediante las opciones disponibles.  
-- Confirmar que los valores se actualizan correctamente en toda la interfaz.  
-![GIF Prueba 1.2](./)  
+- Representación visual de la evolución del tiempo (gráficos de temperatura, precipitaciones, etc.).
+- Predicción por días con intervalos de mañana (8:00), tarde (15:00) y noche (21:00).
+- Predicción de mínimo 48 horas, es decir, dos días posterior al actual.
+- Ejemplo en eltiempo.es
+
+![GIF Prueba 1.2](./Recursos/Ejercicio%201/Ejercicio1.2.gif)  
 
 ### ✅ Prueba 2.1: Comparación de productos  
 
