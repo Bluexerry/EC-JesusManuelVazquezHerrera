@@ -88,13 +88,13 @@ El diseño sigue un esquema _responsive_ y basado en componentes. Se utilizan ho
 - Asegurarse de que se visualizan de manera correcta los datos meteorológicos pronosticados para al menos las siguientes 48 horas.  
 - Ingresar **Madrid** en el filtro de provincia.  
 - Verificar la correcta visualización tanto de los datos actuales como de la predicción meteorológica para las próximas 48 horas.  
-![GIF Prueba 1.1](./Recursos/Ejercicio%201/)  
+![GIF Prueba 1.1](./Recursos/Ejercicio%201/Ejercicio1.1.gif)  
 
 ### ✅ Prueba 1.2: Cambio entre unidades de temperatura  
 
 - Cambiar de **Celsius** a **Fahrenheit** mediante las opciones disponibles.  
 - Confirmar que los valores se actualizan correctamente en toda la interfaz.  
-![GIF Prueba 1.2](./Recursos//Ejercicio%201/)  
+![GIF Prueba 1.2](./)  
 
 ### ✅ Prueba 2.1: Comparación de productos  
 
