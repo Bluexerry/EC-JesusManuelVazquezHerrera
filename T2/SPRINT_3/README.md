@@ -200,14 +200,14 @@ El sistema se basa en React y organiza sus componentes en distintas subcarpetas 
 - Seleccionar un POI en el mapa interactivo que se encuentre en Alcalá de Henares.
 - Se muestra la información meteorológica de la provincia de Madrid.
 
-![GIF Prueba 1.1](./Recursos/Ejercicio%201/Ejercicio1.1.gif)  
+![GIF Prueba 1.1](./Recursos/Ejercicio%201/Ejercicio1.gif)  
 
 ### ✅ Prueba 1.2: Cambios de la interfaz
 
 - Verificar la correcta adaptación de estilo oscuro a claro.
 - Verificar la correcta adaptación de estilo claro a oscuro.
 
-![GIF Prueba 1.2](./Recursos/Ejercicio%201/Ejercicio1.2.gif)  
+![GIF Prueba 1.2](./Recursos/Ejercicio%201/Ejercicio2.gif)  
 
 ### 🔸 Prueba HDU 1
 
@@ -215,7 +215,7 @@ El sistema se basa en React y organiza sus componentes en distintas subcarpetas 
 2. **Caso de prueba 2:** Al enviar una reseña válida, el sistema debería almacenar la entrada y actualizar el listado en tiempo real, mostrando un mensaje de éxito.
 3. **Caso de prueba 3:** Probar que el formulario muestra errores cuando el usuario envía datos incompletos del comentario o de la puntuación.
 
-![GIF Prueba HUD 1](./Recursos/Ejercicio%202/Ejercicio2.1.gif)  
+![GIF Prueba HUD 1](./Recursos/Ejercicio%202/Ejercicio1.gif)  
 
 ### 🔸 Prueba HDU 2
 
@@ -223,7 +223,7 @@ El sistema se basa en React y organiza sus componentes en distintas subcarpetas 
 2. **Caso de prueba 2:** Acceder a la sección **"Mis Favoritos"** y corroborar que el juego añadido aparece con sus datos resumidos.
 3. **Caso de prueba 3:** Remover un juego de la lista y comprobar que se muestra un mensaje de confirmación y que el listado se actualiza sin recargar la página.
 
-![GIF Prueba HUD 2](./Recursos/Ejercicio%202/Ejercicio2.2.gif)  
+![GIF Prueba HUD 2](./Recursos/Ejercicio%202/Ejercicio2.gif)  
 
 ### 🔸 Prueba HDU 3
 
@@ -231,7 +231,7 @@ El sistema se basa en React y organiza sus componentes en distintas subcarpetas 
 2. **Caso de prueba 2:** Comprobar que las preguntas y respuestas se actualizan en tiempo real.
 3. **Caso de prueba 3:** Validar que las respuestas aparecen correctamente organizadas.
 
-![GIF Prueba HUD 3](./Recursos/Ejercicio%202/Ejercicio2.3.gif)  
+![GIF Prueba HUD 3](./Recursos/Ejercicio%202/Ejercicio3.gif)  
 
 ---
 
