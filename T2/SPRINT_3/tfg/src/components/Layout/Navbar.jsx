@@ -1,8 +1,12 @@
+// Language: JavaScript (JSX)
 import React from 'react';
 import '../../styles/layout.css';
 import { Link } from 'react-router-dom';
+import { useTheme } from '../Theme/ThemeContext.jsx';
 
 const Navbar = () => {
+  const { theme, toggleTheme } = useTheme();
+
   return (
     <nav className="navbar">
       <div className="brand-logo">MiTienda</div>
@@ -13,7 +17,7 @@ const Navbar = () => {
         <li><Link to="/contacto">Contacto</Link></li>
         <li><Link to="/weather">Tiempo</Link></li>
         <li><Link to="/weather/detailed">Pronóstico Detallado</Link></li>
-
+        <li><Link to="/weather/detailed/map">Mapa Meteorológico</Link></li>
         <li><Link to="/login">Iniciar Sesión</Link></li>
         <li><Link to="/register">Registrarse</Link></li>
       </ul>
@@ -21,6 +25,9 @@ const Navbar = () => {
         <input type="text" placeholder="Buscar videojuegos..." />
         <button>Buscar</button>
       </div>
+      <button onClick={toggleTheme} className="theme-toggle">
+        {theme === 'light' ? 'Modo Oscuro' : 'Modo Claro'}
+      </button>
     </nav>
   );
 };

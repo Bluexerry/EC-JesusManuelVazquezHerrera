@@ -1,20 +1,30 @@
+// Language: JavaScript (JSX)
 import React from 'react';
 import '../../styles/home.css';
+import ProductCard from './ProductCard.jsx';
 
-const ProductList = ({ products, onAddToCart, onOpenChat, onOpenConfigurator }) => {
+const ProductList = ({
+  products,
+  onAddToCart,
+  onOpenChat,
+  onOpenConfigurator,
+  onOpenReviews,
+  favorites,
+  onToggleFavorite
+}) => {
   return (
     <div className="product-list">
-      {products.map(product => (
-        <div key={product.id} className="product-card">
-          <img src={product.cover} alt={product.name} />
-          <h3>{product.name}</h3>
-          <p>{product.category}</p>
-          <p>${product.price}</p>
-          <button onClick={() => onAddToCart(product)}>Agregar al carrito</button>
-          <button onClick={() => onOpenChat(product)}>Abrir Chat</button>
-          {/* Se asegura de que se llame al prop recibido */}
-          <button onClick={() => onOpenConfigurator(product)}>Abrir Configurador</button>
-        </div>
+      {products.map((product) => (
+        <ProductCard
+          key={product.id}
+          product={product}
+          onAddToCart={onAddToCart}
+          onOpenChat={onOpenChat}
+          onOpenConfigurator={onOpenConfigurator}
+          onOpenReviews={onOpenReviews}
+          favorites={favorites}
+          onToggleFavorite={onToggleFavorite}
+        />
       ))}
     </div>
   );

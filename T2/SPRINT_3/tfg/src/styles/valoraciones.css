@@ -1,0 +1,143 @@
+/* Language: CSS */
+/* Improved styling for Reviews Modal */
+
+.reviews-modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.75);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1100;
+}
+
+.reviews-modal {
+    background-color: var(--card-bg, #fff);
+    padding: 2rem;
+    border-radius: var(--border-radius, 8px);
+    width: 95%;
+    max-width: 600px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+    position: relative;
+    animation: modalSlideIn 0.4s ease-out;
+    font-family: 'Roboto', sans-serif;
+}
+
+@keyframes modalSlideIn {
+    from {
+        opacity: 0;
+        transform: translateY(-30px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.close-modal {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    background: transparent;
+    border: none;
+    font-size: 1.5rem;
+    color: var(--text-color, #333);
+    cursor: pointer;
+    transition: color 0.3s;
+}
+
+.close-modal:hover {
+    color: var(--primary-color, #007bff);
+}
+
+.review-field {
+    margin-bottom: 1.5rem;
+}
+
+.review-field label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: 600;
+    color: var(--text-color, #333);
+}
+
+.review-field input,
+.review-field textarea {
+    width: 100%;
+    padding: 0.75rem;
+    font-size: 1rem;
+    border: 1px solid var(--border-color, #ccc);
+    border-radius: var(--border-radius, 8px);
+    transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+.review-field input:focus,
+.review-field textarea:focus {
+    border-color: var(--primary-color, #007bff);
+    box-shadow: 0 0 8px var(--primary-color, #007bff);
+    outline: none;
+}
+
+.reviews-modal button[type="submit"] {
+    display: block;
+    width: 100%;
+    padding: 0.75rem;
+    margin-top: 1rem;
+    background-color: var(--primary-color, #007bff);
+    color: #fff;
+    border: none;
+    border-radius: var(--border-radius, 8px);
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+.reviews-modal button[type="submit"]:hover {
+    background-color: var(--button-hover, #0056b3);
+    transform: scale(1.02);
+}
+
+.reviews-list {
+    margin-top: 2rem;
+}
+
+.reviews-list h3 {
+    font-size: 1.25rem;
+    margin-bottom: 1rem;
+    color: var(--primary-color, #007bff);
+    text-align: center;
+}
+
+.reviews-list ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.reviews-list li {
+    padding: 1rem 0;
+    border-bottom: 1px solid var(--border-color, #e0e0e0);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.reviews-list li:last-child {
+    border-bottom: none;
+}
+
+.review-error {
+    color: #e74c3c;
+    margin-top: 0.5rem;
+    font-size: 0.9rem;
+}
+
+.review-success {
+    color: #28a745;
+    margin-top: 0.5rem;
+    font-size: 0.9rem;
+}

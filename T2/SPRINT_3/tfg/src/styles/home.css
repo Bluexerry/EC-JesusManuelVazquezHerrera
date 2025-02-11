@@ -1,10 +1,9 @@
 /* Hero Section Styles */
 .hero-section {
-  /*   background-image: url('/assets/images/hero-background.jpg');*/
-
+  /* Si usas una imagen de fondo, déjala comentada o ajusta según el tema */
   background-size: cover;
   background-position: center;
-  color: #fff;
+  color: var(--border-color);
   padding: 120px 20px;
   text-align: center;
   position: relative;
@@ -17,7 +16,7 @@
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: rgba(44, 62, 80, 0.6);
+  background-color: var(--overlay-color);
 }
 
 .hero-section>* {
@@ -39,11 +38,10 @@
   padding: 12px 30px;
   background-color: var(--secondary-color);
   border: none;
-  color: #fff;
+  color: var(--border-color);
   font-size: 1.1rem;
   border-radius: 30px;
   cursor: pointer;
-  transition: background-color var(--transition-speed);
 }
 
 .hero-section button:hover {
@@ -66,18 +64,18 @@
 
 /* Product Filter Styles */
 .product-filter {
-  background-color: #ffffff;
+  background-color: var(--card-bg);
+  /* Antes estaba #ffffff */
   padding: 25px 30px;
   margin: 30px auto;
   max-width: 900px;
-  border-radius: 8px;
+  border-radius: var(--border-radius);
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
 .product-filter h3 {
   margin-bottom: 20px;
   font-size: 1.5rem;
-  color: var(--text-color);
 }
 
 .filter-group {
@@ -217,14 +215,14 @@
 /* Validation Styles */
 
 
-/* LoginForm Styles */
 .auth-container {
   max-width: 400px;
   margin: 50px auto;
   padding: 20px;
-  background-color: #f9f9f9;
-  border: 1px solid #ddd;
-  border-radius: 8px;
+  background-color: var(--card-bg);
+  /* Cambiado de #f9f9f9 */
+  border: 1px solid var(--border-color);
+  border-radius: var(--border-radius);
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   font-family: 'Roboto', sans-serif;
   text-align: center;
@@ -233,7 +231,7 @@
 .auth-container h2 {
   margin-bottom: 20px;
   font-size: 24px;
-  color: #333;
+  color: var(--text-color);
 }
 
 .form-group {
@@ -331,20 +329,21 @@ button[type="submit"]:hover {
   background-color: #138496;
 }
 
+/* Estilos actualizados para el Configurador */
 .configurator-container {
-  background-color: #ffffff;
-  border: 1px solid #ddd;
-  border-radius: 8px;
+  background-color: var(--card-bg);
+  border: 1px solid var(--border-color);
+  border-radius: var(--border-radius);
   padding: 20px;
   margin: 20px 0;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  transition: background-color var(--transition-duration) ease;
 }
 
 .configurator-container h2 {
   font-size: 1.5rem;
   text-align: center;
   margin-bottom: 20px;
-  color: #333;
 }
 
 .configurator-field {
@@ -356,21 +355,24 @@ button[type="submit"]:hover {
 .configurator-field label {
   margin-bottom: 5px;
   font-weight: 600;
-  color: #555;
+  color: var(--text-color);
+  transition: color var(--transition-duration, 0.5s) ease;
 }
 
 .configurator-field select {
   padding: 10px;
-  border: 1px solid #ccc;
+  border: 1px solid var(--border-color, #ccc);
   border-radius: 4px;
   font-size: 1rem;
-  color: #333;
-  background-color: #fff;
+  color: var(--text-color);
+  background-color: var(--card-bg);
+  transition: background-color var(--transition-duration, 0.5s) ease,
+    border-color var(--transition-duration, 0.5s) ease;
 }
 
 .configurator-button,
 .configurator-buttons button {
-  background-color: #007bff;
+  background-color: var(--primary-color);
   color: #fff;
   border: none;
   padding: 10px 20px;
@@ -382,7 +384,7 @@ button[type="submit"]:hover {
 
 .configurator-button:hover,
 .configurator-buttons button:hover {
-  background-color: #0056b3;
+  background-color: var(--button-hover, #0056b3);
 }
 
 .global-filter-section {
@@ -457,7 +459,7 @@ button[type="submit"]:hover {
 
 .comparador-container {
   font-family: var(--font-family);
-  background-color: var(--background-color);
+  background-color: var(--card-bg);
   border-radius: var(--border-radius);
   box-shadow: 0 4px 6px var(--shadow-color);
   padding: 20px;
@@ -467,7 +469,6 @@ button[type="submit"]:hover {
 
 .comparador-container h2 {
   margin-bottom: 20px;
-  color: var(--text-color);
   font-size: 1.75rem;
   text-align: center;
 }
@@ -481,7 +482,7 @@ button[type="submit"]:hover {
 }
 
 .comparador-product-card {
-  background-color: var(--background-color);
+  background-color: var(--border-color);
   border: 1px solid var(--border-color);
   border-radius: var(--border-radius);
   width: 150px;
@@ -552,21 +553,22 @@ button[type="submit"]:hover {
   }
 }
 
+/* Actualiza el Configurador */
 .configurator-container {
-  background-color: #f9f9f9;
-  border-radius: 8px;
+  background-color: var(--card-bg);
+  border: 1px solid var(--border-color);
+  border-radius: var(--border-radius);
   padding: 20px;
   margin: 20px auto;
   max-width: 600px;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-family: var(--font-family);
 }
 
 .configurator-container h2 {
   text-align: center;
   margin-bottom: 20px;
   font-size: 1.8rem;
-  color: #343a40;
 }
 
 .configurator-form {
@@ -583,7 +585,6 @@ button[type="submit"]:hover {
 
 .configurator-field label {
   font-weight: bold;
-  color: #343a40;
 }
 
 .configurator-field select {
@@ -616,7 +617,7 @@ button[type="submit"]:hover {
 .configurator-recommendations h3 {
   text-align: center;
   margin-bottom: 10px;
-  color: #343a40;
+  color: #0056b3;
 }
 
 .configurator-recommendations ul {
@@ -632,19 +633,21 @@ button[type="submit"]:hover {
   border-radius: 4px;
 }
 
+/* Y actualiza el sistema de votación para que use las variables */
 .survey-container {
-  background-color: #fdfdfd;
-  border: 1px solid #e0e0e0;
-  border-radius: 8px;
+  background-color: var(--card-bg);
+  border: 1px solid var(--border-color);
+  border-radius: var(--border-radius);
   padding: 25px;
   margin: 20px 0;
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  transition: background-color var(--transition-duration) ease;
 }
 
 .survey-container h2 {
   text-align: center;
-  color: #333;
   margin-bottom: 20px;
+  transition: color var(--transition-duration) ease;
 }
 
 .survey-products {
@@ -655,13 +658,16 @@ button[type="submit"]:hover {
 }
 
 .survey-product-card {
-  background-color: #fff;
-  border: 1px solid #ddd;
-  border-radius: 6px;
+  background-color: var(--border-color);
+  /* Se usa fondo de tarjeta */
+  border: 1px solid var(--border-color, #ddd);
+  border-radius: var(--border-radius, 6px);
   padding: 15px;
   text-align: center;
   width: 180px;
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  transition: background-color var(--transition-duration, 0.5s) ease,
+    border-color var(--transition-duration, 0.5s) ease;
 }
 
 .survey-product-card img {
@@ -674,11 +680,12 @@ button[type="submit"]:hover {
 .survey-product-card p {
   font-size: 1rem;
   margin-bottom: 10px;
-  color: #555;
+  color: var(--text-color);
+  transition: color var(--transition-duration, 0.5s) ease;
 }
 
 .survey-product-card button {
-  background-color: #007bff;
+  background-color: var(--primary-color);
   color: #fff;
   border: none;
   margin-bottom: 8px;
@@ -689,12 +696,13 @@ button[type="submit"]:hover {
 }
 
 .survey-product-card button:hover {
-  background-color: #0056b3;
+  background-color: var(--button-hover, #0056b3);
 }
 
 .survey-product-card span {
   font-size: 0.9rem;
-  color: #333;
+  color: var(--text-color);
+  transition: color var(--transition-duration, 0.5s) ease;
 }
 
 .top-products {

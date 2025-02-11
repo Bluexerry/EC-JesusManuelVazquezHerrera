@@ -1,0 +1,110 @@
+/* Estilos generales del contenedor del mapa */
+.detailed-weather-map {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    padding: 30px 20px;
+    background-color: #f4f4f4;
+}
+
+/* Encabezado del mapa */
+.map-header {
+    font-size: 28px;
+    font-weight: bold;
+    color: #13678A;
+    text-align: center;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+/* Contenedor del mapa con mayor altura */
+.map-wrapper {
+    width: 95%;
+    max-width: 1200px;
+    height: 650px;
+    /* Aumenta la altura del mapa */
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0px 6px 15px rgba(0, 0, 0, 0.2);
+    border: 3px solid #13678A;
+}
+
+/* Ajuste del contenedor del mapa */
+.map-container {
+    width: 100%;
+    height: 100%;
+}
+
+/* Estilos de los popups */
+.marker-popup {
+    text-align: center;
+    font-family: Arial, sans-serif;
+    padding: 10px;
+}
+
+/* Título dentro del popup */
+.popup-title {
+    font-size: 20px;
+    font-weight: bold;
+    color: #13678A;
+    margin-bottom: 8px;
+    text-transform: uppercase;
+}
+
+/* Código dentro del popup */
+.popup-code {
+    font-size: 14px;
+    color: #666;
+    margin-bottom: 12px;
+}
+
+/* Botón dentro del popup */
+.popup-button {
+    background-color: #45C4B0;
+    color: white;
+    border: none;
+    padding: 10px 14px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: bold;
+    transition: all 0.3s ease-in-out;
+    box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.15);
+}
+
+.popup-button:hover {
+    background-color: #36A395;
+    transform: scale(1.05);
+}
+
+/* Estilo para cuando el botón está deshabilitado */
+.popup-button:disabled {
+    background-color: #9AEBA3;
+    cursor: not-allowed;
+    opacity: 0.7;
+}
+
+/* Contenedor de datos meteorológicos más grande */
+.weather-data {
+    margin-top: 12px;
+    background: #DAFDBA;
+    padding: 15px;
+    border-radius: 8px;
+    text-align: left;
+    box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.15);
+    border-left: 5px solid #13678A;
+    max-height: 300px;
+    /* Se ha aumentado la altura máxima */
+    overflow-y: auto;
+}
+
+/* Mensajes de error */
+.popup-error {
+    color: red;
+    font-size: 14px;
+    margin-top: 6px;
+    font-weight: bold;
+}

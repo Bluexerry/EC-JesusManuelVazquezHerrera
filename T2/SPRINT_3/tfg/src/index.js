@@ -1,11 +1,11 @@
-import React from 'react';
+// Language: JavaScript (JSX)
 import ReactDOM from 'react-dom/client';
-import App from './App';
-import '@fortawesome/fontawesome-free/css/all.min.css';
+import App from './App.jsx';
+import NotificationSystem from './components/Shared/NotificationSystem.jsx';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
-  <React.StrictMode>
+  <NotificationSystem>
     <App />
-  </React.StrictMode>
+  </NotificationSystem>
 );
