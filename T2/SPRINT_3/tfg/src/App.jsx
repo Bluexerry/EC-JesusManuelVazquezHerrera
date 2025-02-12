@@ -19,12 +19,11 @@ import VotingSystem from './components/Home/VotingsSystem.jsx';
 import ProductConfigurator from './components/Home/ProductConfigurator.jsx';
 import WeatherSearch from './components/Weather/WeatherSearch.jsx';
 import DetailedWeatherSearch from './components/Weather/DetailedWeatherSearch.jsx';
-import DetaledWeatherMap from './components/Weather/DetailedWeatherMap.jsx';
 import ProductReviews from './components/HDU/ProductReview.jsx';
 import { ThemeProvider } from './components/Theme/ThemeContext.jsx';
 import NotificationProvider, { useNotification } from './components/Shared/NotificationSystem.jsx';
 import ProductQA from './components/HDU/ProductQA.jsx'; // [`ProductQA`](src/components/HDU/ProductQA.jsx)
-
+import DetailedWeatherMap from './components/Weather/DetailedWeatherMap.jsx';
 const App = () => {
   const [products, setProducts] = useState([]);
   const [filteredProducts, setFilteredProducts] = useState([]);
@@ -183,7 +182,7 @@ const App = () => {
               <Route path="/forgot-password" element={<ForgotPasswordForm />} />
               <Route path="/weather" element={<WeatherSearch />} />
               <Route path="/weather/detailed" element={<DetailedWeatherSearch />} />
-              <Route path="/weather/detailed/map" element={<DetaledWeatherMap />} />
+              <Route path="/weather/detailed/map" element={<DetailedWeatherMap />} />
             </Routes>
             <Footer />
 

@@ -1,79 +1,155 @@
-// Language: JavaScript (JSX)
-import React, { useState } from 'react';
-import { MapContainer, TileLayer, Marker, Popup } from 'react-leaflet';
-import L from 'leaflet';
-import { getWeatherPrediction } from '../../services/apiClient.js';
-import { provinces, provincesCoordinates } from '../../services/provincesData.js';
-import 'leaflet/dist/leaflet.css';
-import '../../styles/mapa.css';
+import React, { useState, useEffect } from "react";
+import { MapContainer, TileLayer, Marker, Popup, useMapEvents } from "react-leaflet";
+import L from "leaflet";
+import "leaflet/dist/leaflet.css";
+import "../../styles/map.css";
+
+const API_KEY = "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJqbXZhenF1ZXpoZXJyZXJhQGFkYWl0cy5lcyIsImp0aSI6ImVjYzI5YzU0LWNhN2YtNDYzZi1iZjlkLWUwOTI5ODU2ZDBkZSIsImlzcyI6IkFFTUVUIiwiaWF0IjoxNzM3NzQxNzc2LCJ1c2VySWQiOiJlY2MyOWM1NC1jYTdmLTQ2M2YtYmY5ZC1lMDkyOTg1NmQwZGUiLCJyb2xlIjoiIn0.3hcx6KrqDOeLZpfbqAsinLAxQmZAohy3gPJ-z1w7N54";
+const WEATHER_ENDPOINT = "https://opendata.aemet.es/opendata/api/observacion/convencional/datos/estacion";
+const STATIONS_ENDPOINT = "https://opendata.aemet.es/opendata/api/valores/climatologicos/inventarioestaciones/todasestaciones";
+
+// Define custom Pikachu icon.
+const pikachuIcon = L.icon({
+    iconUrl: "/assets/icons/Pikachu.png",
+    iconSize: [32, 32],
+    iconAnchor: [16, 32],
+    popupAnchor: [0, -32],
+});
+
+// Converts a ddmmss coordinate (e.g.: "394924N" or "025309E") to decimal degrees.
+const convertCoordinates = (coord) => {
+    const numeric = coord.slice(0, -1);
+    const hemisphere = coord.slice(-1);
+    const degrees = parseInt(numeric.slice(0, 2), 10);
+    const minutes = parseInt(numeric.slice(2, 4), 10);
+    const seconds = parseInt(numeric.slice(4, 6), 10);
+    let decimal = degrees + minutes / 60 + seconds / 3600;
+    return hemisphere === "S" || hemisphere === "W" ? -decimal : decimal;
+};
+
+// Finds the nearest station from the list based on Euclidean distance approximation.
+const findNearestStation = (lat, lon, stationsList) => {
+    let nearest = null;
+    let minDist = Infinity;
+    stationsList.forEach((station) => {
+        // It is assumed each station has "latitud", "longitud" and "indicativo".
+        const stationLat = convertCoordinates(station.latitud);
+        const stationLon = convertCoordinates(station.longitud);
+        const dist = Math.sqrt((lat - stationLat) ** 2 + (lon - stationLon) ** 2);
+        if (dist < minDist) {
+            minDist = dist;
+            nearest = station;
+        }
+    });
+    return nearest;
+};
 
 const DetailedWeatherMap = () => {
-    const [selectedWeather, setSelectedWeather] = useState(null);
-    const [error, setError] = useState('');
-    const [loadingCode, setLoadingCode] = useState('');
+    const [selectedLocation, setSelectedLocation] = useState(null);
+    const [nearestStationData, setNearestStationData] = useState(null);
+    const [weatherData, setWeatherData] = useState(null);
+    const [stations, setStations] = useState([]);
 
-    const handleGetWeather = async (provinceCode) => {
-        setSelectedWeather(null);
-        setError('');
-        setLoadingCode(provinceCode);
-        try {
-            const data = await getWeatherPrediction(provinceCode);
-            setSelectedWeather({ code: provinceCode, data });
-        } catch (err) {
-            setError(err.message);
-        } finally {
-            setLoadingCode('');
+    // Load stations data from AEMET endpoint on component mount
+    useEffect(() => {
+        fetch(`${STATIONS_ENDPOINT}?api_key=${API_KEY}`)
+            .then((res) => res.json())
+            .then((data) => {
+                if (data && data.datos) {
+                    return fetch(data.datos, {
+                        headers: { "Content-Type": "application/json" },
+                    });
+                }
+                throw new Error("No data url for stations");
+            })
+            .then((res) => res.json())
+            .then((stationsData) => setStations(stationsData))
+            .catch((err) => console.error("Error fetching stations:", err));
+    }, []);
+
+    // Handle map clicks: capture location, find nearest station and fetch its weather
+    const handleMapClick = (e) => {
+        const { lat, lng } = e.latlng;
+        setSelectedLocation({ lat, lng });
+        setWeatherData(null);
+
+        if (stations.length > 0) {
+            const nearest = findNearestStation(lat, lng, stations);
+            setNearestStationData(nearest);
+
+            if (nearest && nearest.indicativo) {
+                fetch(`${WEATHER_ENDPOINT}/${nearest.indicativo}?api_key=${API_KEY}`)
+                    .then((res) => res.json())
+                    .then((data) => {
+                        if (data && data.datos) {
+                            return fetch(data.datos, {
+                                headers: { "Content-Type": "application/json" },
+                            });
+                        }
+                        throw new Error("No data url for weather");
+                    })
+                    .then((res) => res.json())
+                    .then((weather) => setWeatherData(weather[0]))
+                    .catch((err) => console.error("Error fetching weather data:", err));
+            }
         }
     };
 
-    // Ícono del marcador utilizando la ruta pública
-    const markerIcon = new L.Icon({
-        iconUrl: process.env.PUBLIC_URL + '/assets/icons/marker-icon.png',
-        iconSize: [25, 41],
-        iconAnchor: [12, 41],
-    });
-
     return (
-        <div className="detailed-weather-map">
-            <h2 className="map-header">Mapa Meteorológico Interactivo</h2>
-            <div className="map-wrapper">
-                <MapContainer center={[40.0, -3.7]} zoom={6} className="map-container">
-                    <TileLayer
-                        attribution='&copy; OpenStreetMap contributors'
-                        url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
-                    />
-                    {provinces.map((prov) => {
-                        const coord = provincesCoordinates[prov.code];
-                        if (!coord) return null;
-                        return (
-                            <Marker key={prov.code} position={[coord.lat, coord.lng]} icon={markerIcon}>
-                                <Popup className="marker-popup">
-                                    <h3 className="popup-title">{prov.name}</h3>
-                                    <p className="popup-code">Código: {prov.code}</p>
-                                    <button 
-                                        className="popup-button" 
-                                        onClick={() => handleGetWeather(prov.code)} 
-                                        disabled={loadingCode === prov.code}
-                                    >
-                                        {loadingCode === prov.code ? 'Cargando...' : 'Ver Predicción'}
-                                    </button>
-                                    {selectedWeather && selectedWeather.code === prov.code && (
-                                        <div className="weather-data">
-                                            <h4>Datos Meteorológicos:</h4>
-                                            <pre className="weather-pre" style={{ maxHeight: '150px', overflow: 'auto' }}>
-                                                {selectedWeather.data}
-                                            </pre>
-                                        </div>
-                                    )}
-                                    {error && <p className="popup-error">{error}</p>}
-                                </Popup>
-                            </Marker>
-                        );
-                    })}
-                </MapContainer>
-            </div>
-        </div>
+        <MapContainer center={[40, -3]} zoom={6} style={{ height: "100vh", width: "100%" }}>
+            <TileLayer url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png" />
+            <MapClickHandler onClick={handleMapClick} />
+            {selectedLocation && (
+                <Marker icon={pikachuIcon} position={[selectedLocation.lat, selectedLocation.lng]}>
+                    <Popup>
+                        <div>
+                            <h4>Ubicación Seleccionada</h4>
+                            <p>
+                                <strong>Lat:</strong> {selectedLocation.lat.toFixed(4)}
+                                <br />
+                                <strong>Lng:</strong> {selectedLocation.lng.toFixed(4)}
+                            </p>
+                            {nearestStationData && (
+                                <>
+                                    <h4>Estación Más Cercana</h4>
+                                    <p>
+                                        <strong>Indicativo:</strong>{" "}
+                                        {nearestStationData.indicativo || "No disponible"}
+                                        <br />
+                                        <strong>Latitud:</strong> {nearestStationData.latitud || "No disponible"}
+                                        <br />
+                                        <strong>Longitud:</strong> {nearestStationData.longitud || "No disponible"}
+                                    </p>
+                                </>
+                            )}
+                            {weatherData ? (
+                                <>
+                                    <h4>Datos Meteorológicos</h4>
+                                    <p>
+                                        <strong>Ubicación:</strong> {weatherData.ubi}
+                                        <br />
+                                        <strong>Temperatura:</strong> {weatherData.ta}°C
+                                        <br />
+                                        <strong>Humedad:</strong> {weatherData.hr}%
+                                        <br />
+                                        <strong>Viento:</strong> {weatherData.vv} m/s
+                                    </p>
+                                </>
+                            ) : (
+                                <p>Cargando datos meteorológicos...</p>
+                            )}
+                            <p><em>Pika pika, pikachu</em></p>
+                        </div>
+                    </Popup>
+                </Marker>
+            )}
+        </MapContainer>
     );
+};
+
+const MapClickHandler = ({ onClick }) => {
+    useMapEvents({ click: onClick });
+    return null;
 };
 
 export default DetailedWeatherMap;
