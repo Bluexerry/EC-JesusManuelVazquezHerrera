@@ -16,7 +16,7 @@ const pikachuIcon = L.icon({
     popupAnchor: [0, -32],
 });
 
-// Converts a ddmmss coordinate (e.g.: "394924N" or "025309E") to decimal degrees.
+// Converts a ddmmss coordinate to decimal degrees.
 const convertCoordinates = (coord) => {
     const numeric = coord.slice(0, -1);
     const hemisphere = coord.slice(-1);
@@ -32,7 +32,6 @@ const findNearestStation = (lat, lon, stationsList) => {
     let nearest = null;
     let minDist = Infinity;
     stationsList.forEach((station) => {
-        // It is assumed each station has "latitud", "longitud" and "indicativo".
         const stationLat = convertCoordinates(station.latitud);
         const stationLon = convertCoordinates(station.longitud);
         const dist = Math.sqrt((lat - stationLat) ** 2 + (lon - stationLon) ** 2);
@@ -50,7 +49,6 @@ const DetailedWeatherMap = () => {
     const [weatherData, setWeatherData] = useState(null);
     const [stations, setStations] = useState([]);
 
-    // Load stations data from AEMET endpoint on component mount
     useEffect(() => {
         fetch(`${STATIONS_ENDPOINT}?api_key=${API_KEY}`)
             .then((res) => res.json())
@@ -67,7 +65,6 @@ const DetailedWeatherMap = () => {
             .catch((err) => console.error("Error fetching stations:", err));
     }, []);
 
-    // Handle map clicks: capture location, find nearest station and fetch its weather
     const handleMapClick = (e) => {
         const { lat, lng } = e.latlng;
         setSelectedLocation({ lat, lng });
@@ -96,54 +93,56 @@ const DetailedWeatherMap = () => {
     };
 
     return (
-        <MapContainer center={[40, -3]} zoom={6} style={{ height: "100vh", width: "100%" }}>
-            <TileLayer url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png" />
-            <MapClickHandler onClick={handleMapClick} />
-            {selectedLocation && (
-                <Marker icon={pikachuIcon} position={[selectedLocation.lat, selectedLocation.lng]}>
-                    <Popup>
-                        <div>
-                            <h4>Ubicación Seleccionada</h4>
-                            <p>
-                                <strong>Lat:</strong> {selectedLocation.lat.toFixed(4)}
-                                <br />
-                                <strong>Lng:</strong> {selectedLocation.lng.toFixed(4)}
-                            </p>
-                            {nearestStationData && (
-                                <>
-                                    <h4>Estación Más Cercana</h4>
-                                    <p>
-                                        <strong>Indicativo:</strong>{" "}
-                                        {nearestStationData.indicativo || "No disponible"}
-                                        <br />
-                                        <strong>Latitud:</strong> {nearestStationData.latitud || "No disponible"}
-                                        <br />
-                                        <strong>Longitud:</strong> {nearestStationData.longitud || "No disponible"}
-                                    </p>
-                                </>
-                            )}
-                            {weatherData ? (
-                                <>
-                                    <h4>Datos Meteorológicos</h4>
-                                    <p>
-                                        <strong>Ubicación:</strong> {weatherData.ubi}
-                                        <br />
-                                        <strong>Temperatura:</strong> {weatherData.ta}°C
-                                        <br />
-                                        <strong>Humedad:</strong> {weatherData.hr}%
-                                        <br />
-                                        <strong>Viento:</strong> {weatherData.vv} m/s
-                                    </p>
-                                </>
-                            ) : (
-                                <p>Cargando datos meteorológicos...</p>
-                            )}
-                            <p><em>Pika pika, pikachu</em></p>
-                        </div>
-                    </Popup>
-                </Marker>
-            )}
-        </MapContainer>
+        <div className="map-wrapper">
+            <MapContainer center={[40, -3]} zoom={6} style={{ height: "100%", width: "100%" }}>
+                <TileLayer url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png" />
+                <MapClickHandler onClick={handleMapClick} />
+                {selectedLocation && (
+                    <Marker icon={pikachuIcon} position={[selectedLocation.lat, selectedLocation.lng]}>
+                        <Popup>
+                            <div>
+                                <h4>Ubicación Seleccionada</h4>
+                                <p>
+                                    <strong>Lat:</strong> {selectedLocation.lat.toFixed(4)}
+                                    <br />
+                                    <strong>Lng:</strong> {selectedLocation.lng.toFixed(4)}
+                                </p>
+                                {nearestStationData && (
+                                    <>
+                                        <h4>Estación Más Cercana</h4>
+                                        <p>
+                                            <strong>Indicativo:</strong>{" "}
+                                            {nearestStationData.indicativo || "No disponible"}
+                                            <br />
+                                            <strong>Latitud:</strong> {nearestStationData.latitud || "No disponible"}
+                                            <br />
+                                            <strong>Longitud:</strong> {nearestStationData.longitud || "No disponible"}
+                                        </p>
+                                    </>
+                                )}
+                                {weatherData ? (
+                                    <>
+                                        <h4>Datos Meteorológicos</h4>
+                                        <p>
+                                            <strong>Ubicación:</strong> {weatherData.ubi}
+                                            <br />
+                                            <strong>Temperatura:</strong> {weatherData.ta}°C
+                                            <br />
+                                            <strong>Humedad:</strong> {weatherData.hr}%
+                                            <br />
+                                            <strong>Viento:</strong> {weatherData.vv} m/s
+                                        </p>
+                                    </>
+                                ) : (
+                                    <p>Cargando datos meteorológicos...</p>
+                                )}
+                                <p><em>Pika pika, pikachu</em></p>
+                            </div>
+                        </Popup>
+                    </Marker>
+                )}
+            </MapContainer>
+        </div>
     );
 };
 
